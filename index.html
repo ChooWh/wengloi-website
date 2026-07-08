@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weng Loi Machinery Engineering — Machining, Repair &amp; Reconditioning Since 1989 | Ipoh, Malaysia</title>
+<meta name="description" content="One-stop machine shop in Ipoh since 1989. CNC &amp; manual machining, machinery parts repair and reconditioning for plants, factories and contractors. Turning up to ø1,600mm. WhatsApp us your part today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<style>
+:root{
+  --navy:#0D2B52;
+  --navy2:#123563;
+  --red:#E30613;
+  --steel:#6B6F76;
+  --light:#F2F4F7;
+  --white:#FFFFFF;
+  --wa:#25D366;
+  --maxw:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',Arial,sans-serif;color:var(--navy);background:var(--white);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{padding:84px 0;position:relative}
+h2{font-size:clamp(28px,4.4vw,44px);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-.5px}
+.kicker{color:var(--red);font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";display:inline-block;width:34px;height:3px;background:var(--red)}
+.lead{color:var(--steel);font-size:17px;max-width:640px}
+.btn{display:inline-block;padding:15px 30px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;text-align:center;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 28px rgba(13,43,82,.35)}
+.btn:active{transform:translateY(-1px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-outline{border:2px solid #fff;color:#fff}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}
+.btn:hover::after{animation:shine .7s ease}
+@keyframes shine{to{left:130%}}
+
+/* ---------- Scroll progress ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),#ff5a63);z-index:300;transition:width .1s linear}
+
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0);transition:background .35s ease,box-shadow .35s ease,height .35s ease}
+header .nav{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .35s ease}
+header.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 2px 18px rgba(13,43,82,.12)}
+header.solid .nav{height:68px}
+header:not(.solid) nav.menu a:not(.nav-cta){color:#fff}
+header:not(.solid) .logo-text .cn,header:not(.solid) .logo-text .en{color:#fff}
+header:not(.solid) .burger{color:#fff}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{height:46px;width:auto;transition:transform .4s ease}
+.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.08)}
+.logo-text{line-height:1.15}
+.logo-text .cn{font-size:13px;font-weight:700;letter-spacing:2px;transition:color .35s}
+.logo-text .en{font-size:11px;font-weight:800;letter-spacing:.5px;transition:color .35s}
+.logo-text .since{font-size:9px;color:var(--red);font-weight:700;font-style:italic}
+nav.menu{display:flex;gap:26px;align-items:center}
+nav.menu a{text-decoration:none;font-weight:600;font-size:14px;color:var(--navy);position:relative;transition:color .35s}
+nav.menu a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--red);transition:width .25s ease}
+nav.menu a:not(.nav-cta):hover::after,nav.menu a.active::after{width:100%}
+nav.menu a.active{color:var(--red)}
+.nav-cta{background:var(--wa);color:#fff !important;padding:10px 18px;border-radius:8px;font-weight:700;transition:transform .2s}
+.nav-cta:hover{transform:scale(1.06)}
+.burger{display:none;background:none;border:none;cursor:pointer;font-size:26px;color:var(--navy);transition:color .35s}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#fff;padding:0;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:-12% 0;background:url('assets/img/hero-machinist.jpg') center/cover no-repeat;animation:kenburns 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-tint{position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,43,82,.55) 22%,rgba(13,43,82,.15) 48%,rgba(13,43,82,0))}
+.hero-tint::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 78%,rgba(8,18,36,.25))}
+.hero-tint::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px)}
+.hud{position:absolute;right:38px;bottom:90px;z-index:2;background:rgba(13,43,82,.35);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(10px);color:#dbe2ec;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:10px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+.hud .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.2s ease infinite}
+@keyframes blink{50%{opacity:.15}}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(159,178,204,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(159,178,204,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%)}
+#hero3d{position:absolute;right:0;top:0;width:52%;height:100%;z-index:1;pointer-events:none}
+.hero.has3d .gear,.hero.has3d .gear2{display:none}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:130px}
+.hero h1{font-size:clamp(36px,6.5vw,72px);font-weight:900;line-height:1.08;max-width:820px;letter-spacing:-1px;text-shadow:0 2px 22px rgba(8,18,36,.85)}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotate(3deg);animation:wordup .7s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes wordup{to{opacity:1;transform:none}}
+.hero h1 .accent{color:#ff4d57;position:relative;white-space:nowrap;text-shadow:0 0 26px rgba(227,6,19,.55)}
+.hero h1 .accent::after{content:"";position:absolute;left:0;bottom:4px;width:100%;height:26%;background:rgba(227,6,19,.35);z-index:-1;transform:scaleX(0);transform-origin:left;animation:underline .6s ease 1.4s forwards}
+@keyframes underline{to{transform:scaleX(1)}}
+.hero p.sub{font-size:clamp(16px,2.2vw,20px);margin:22px 0 36px;max-width:600px;color:#eef2f8;opacity:0;animation:fadeup .8s ease 1s forwards;text-shadow:0 1px 14px rgba(8,18,36,.9)}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeup .8s ease 1.25s forwards}
+.hero .tagline{margin-top:52px;font-size:12px;letter-spacing:4px;font-weight:700;color:#9fb2cc;text-transform:uppercase;opacity:0;animation:fadeup .8s ease 1.5s forwards}
+.hero .tagline b{color:var(--red)}
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.gear{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:420px;height:420px;opacity:.10;z-index:1;animation:spin 40s linear infinite}
+.gear2{position:absolute;right:220px;bottom:-70px;width:200px;height:200px;opacity:.08;z-index:1;animation:spinrev 28s linear infinite}
+@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
+@keyframes spinrev{to{transform:rotate(-360deg)}}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#9fb2cc;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;text-decoration:none}
+.scroll-hint span{display:block;font-size:22px;animation:bob 1.6s ease infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--red);color:#fff;overflow:hidden;padding:13px 0;white-space:nowrap}
+.marquee .track{display:inline-block;animation:marquee 26s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{font-weight:800;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;margin:0 26px}
+.marquee i{font-style:normal;opacity:.6}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Trust bar ---------- */
+.trust{background:var(--navy);color:#fff;padding:44px 0;position:relative}
+.trust::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(159,178,204,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(159,178,204,.06) 1px,transparent 1px);background-size:56px 56px}
+.trust .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center;position:relative}
+.trust .wrap>div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 10px;backdrop-filter:blur(8px)}
+.trust .num{font-size:34px;font-weight:900;color:#fff}
+.trust .num em{color:var(--red);font-style:normal}
+.trust .lbl{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#9fb2cc;font-weight:600}
+
+/* ---------- Services ---------- */
+.services{background:var(--light)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.card{background:#fff;border-radius:12px;padding:32px 26px;box-shadow:0 4px 14px rgba(13,43,82,.06);border-top:4px solid var(--navy);transition:box-shadow .3s ease,border-color .3s ease;transform-style:preserve-3d;will-change:transform}
+.card:hover{border-top-color:var(--red);box-shadow:0 18px 40px rgba(13,43,82,.16)}
+.card .ico{font-size:32px;margin-bottom:14px;display:inline-block;transition:transform .3s ease}
+.card:hover .ico{transform:scale(1.25) rotate(-8deg)}
+.card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.card p{font-size:14px;color:var(--steel)}
+
+/* ---------- Steps ---------- */
+.steps .grid3{margin-top:44px}
+.step{position:relative;padding:32px 26px;border-radius:12px;background:var(--light);transition:transform .25s ease,box-shadow .25s ease}
+.step:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(13,43,82,.12)}
+.step .n{position:absolute;top:-19px;left:26px;background:var(--red);color:#fff;font-weight:800;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 0 0 0 rgba(227,6,19,.5);animation:pulse 2.4s ease infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(227,6,19,.45)}70%{box-shadow:0 0 0 14px rgba(227,6,19,0)}100%{box-shadow:0 0 0 0 rgba(227,6,19,0)}}
+.step h3{font-size:17px;font-weight:700;margin:10px 0 8px}
+.step p{font-size:14px;color:var(--steel)}
+
+/* ---------- Gallery ---------- */
+.work{background:var(--navy);color:#fff}
+.work::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(159,178,204,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(159,178,204,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.work .wrap{position:relative}
+.work .lead{color:#9fb2cc}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.gallery figure{position:relative;border-radius:10px;overflow:hidden;background:var(--navy2);cursor:zoom-in}
+.gallery img{width:100%;height:200px;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.3,1),filter .45s}
+.gallery video{width:100%;height:200px;object-fit:cover;display:block}
+.gallery figure.vid{cursor:default;outline:2px solid var(--red);outline-offset:-2px}
+.gallery figure.vid::after{content:"● LIVE";font-size:10px;font-weight:800;letter-spacing:1px;color:#fff;background:var(--red);padding:3px 8px;border-radius:20px;opacity:1;top:10px;right:10px}
+.gallery figure:hover img{transform:scale(1.09);filter:brightness(1.08)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(13,43,82,.94));padding:28px 12px 10px;font-size:12px;font-weight:600;transform:translateY(8px);opacity:.85;transition:transform .3s,opacity .3s}
+.gallery figure:hover figcaption{transform:none;opacity:1}
+.gallery figure::after{content:"⊕";position:absolute;top:10px;right:12px;font-size:18px;opacity:0;transition:opacity .3s}
+.gallery figure:hover::after{opacity:.9}
+
+/* ---------- Lightbox ---------- */
+.lb{position:fixed;inset:0;background:rgba(8,18,36,.94);z-index:400;display:none;align-items:center;justify-content:center;flex-direction:column;padding:30px}
+.lb.open{display:flex;animation:lbfade .25s ease}
+@keyframes lbfade{from{opacity:0}to{opacity:1}}
+.lb img{max-width:min(92vw,1000px);max-height:78vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb .cap{color:#dbe2ec;font-size:14px;font-weight:600;margin-top:14px}
+.lb button{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:22px;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s}
+.lb button:hover{background:var(--red)}
+.lb .x{top:20px;right:20px}
+.lb .prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb .next{right:16px;top:50%;transform:translateY(-50%)}
+
+/* ---------- Capabilities ---------- */
+.caps .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;margin-top:40px;align-items:start}
+.caps table{width:100%;border-collapse:collapse;font-size:14px}
+.caps th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-size:13px}
+.caps td{padding:11px 14px;border-bottom:1px solid #e2e6ec;color:var(--steel)}
+.caps td:first-child{color:var(--navy);font-weight:600}
+.caps tbody tr{transition:background .2s}
+.caps tbody tr:hover{background:var(--light)}
+.capstats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.capstat{background:var(--light);border-left:4px solid var(--red);border-radius:8px;padding:18px;transition:transform .25s ease,box-shadow .25s ease}
+.capstat:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(13,43,82,.12)}
+.capstat .v{font-size:22px;font-weight:800}
+.capstat .k{font-size:12px;color:var(--steel);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.caps .machimg{border-radius:12px;margin-top:16px;width:100%;height:auto;transition:transform .4s ease;cursor:zoom-in}
+.caps .machimg:hover{transform:scale(1.01)}
+
+/* ---------- About ---------- */
+.about{background:var(--light)}
+.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:8px}
+.about .cols img{border-radius:12px;width:100%;height:380px;object-fit:cover}
+.about .imgwrap{overflow:hidden;border-radius:12px;position:relative}
+.about .imgwrap img{transition:transform .5s ease}
+.about .imgwrap:hover img{transform:scale(1.05)}
+.about .badge{position:absolute;bottom:14px;left:14px;background:var(--red);color:#fff;font-weight:800;padding:10px 16px;border-radius:8px;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.about p{margin-bottom:14px;color:#3c4a5e;font-size:15px}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.member{background:#fff;border-radius:12px;padding:24px 22px;box-shadow:0 4px 14px rgba(13,43,82,.06);text-align:center;transition:transform .3s ease,box-shadow .3s ease}
+.member:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(13,43,82,.15)}
+.member img{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--light);transition:border-color .3s,transform .3s}
+.member:hover img{border-color:var(--red);transform:scale(1.06)}
+.member h4{font-size:15px;font-weight:700}
+.member .role{color:var(--red);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.member p{font-size:13px;color:var(--steel)}
+
+/* ---------- Contact ---------- */
+.contact{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;text-align:center;overflow:hidden}
+.contact h2{color:#fff}
+.contact .lead{margin:0 auto 34px;color:#9fb2cc}
+.contact .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:46px}
+.btn-wa{background:var(--wa);color:#fff;font-size:17px;padding:17px 36px}
+.contact .info{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:900px;margin:0 auto;text-align:left}
+.info div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px;transition:transform .25s,background .25s;backdrop-filter:blur(12px)}
+.info div:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+.info h4{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#9fb2cc;margin-bottom:6px}
+.info p, .info a{font-size:14px;color:#fff;text-decoration:none}
+.info a:hover{color:var(--wa)}
+.contact .gear3{position:absolute;left:-110px;top:-110px;width:320px;height:320px;opacity:.06;animation:spin 50s linear infinite}
+
+/* ---------- Footer ---------- */
+footer{background:#081c38;color:#9fb2cc;padding:28px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer b{color:#fff}
+
+/* ---------- Floating buttons ---------- */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:250;background:var(--wa);color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3);animation:pulse 2.4s ease infinite;transition:transform .2s}
+.wa-float:hover{transform:scale(1.12)}
+.totop{position:fixed;right:26px;bottom:94px;z-index:250;background:var(--navy);color:#fff;width:46px;height:46px;border-radius:50%;border:none;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-4px);background:var(--red)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+.reveal.show{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-48px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal-left.show{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(48px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal-right.show{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .grid3,.trust .wrap{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .caps .cols,.about .cols{grid-template-columns:1fr}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .contact .info{grid-template-columns:1fr}
+  nav.menu{position:fixed;inset:68px 0 auto 0;background:#fff;flex-direction:column;padding:20px;gap:18px;box-shadow:0 10px 20px rgba(13,43,82,.15);display:none}
+  nav.menu.open{display:flex}
+  nav.menu.open a{color:var(--navy) !important}
+  .burger{display:block}
+  .gear,.gear2{display:none}
+  .hero-video,.hud{display:none}
+}
+@media (max-width:520px){
+  .grid3,.trust .wrap,.gallery,.team{grid-template-columns:1fr}
+  .gallery img{height:230px}
+  section{padding:60px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .reveal,.reveal-left,.reveal-right,.hero h1 .w,.hero p.sub,.hero .btns,.hero .tagline{opacity:1 !important;transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <img class="logo-mark" src="assets/img/logo.png" alt="WJL logo">
+      <div class="logo-text">
+        <div class="cn">永來機械工程</div>
+        <div class="en">WENG LOI MACHINERY ENGINEERING</div>
+        <div class="since">— SINCE 1989 —</div>
+      </div>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+    <nav class="menu">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/60177014268?text=Hi%20Lily%2C%20I%20have%20a%20machining%20enquiry." target="_blank" rel="noopener">WhatsApp Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <video class="hero-video" src="assets/video/hero-bg.mp4" poster="assets/video/hero-bg-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="hero-tint"></div>
+  <div class="hero-grid"></div>
+  <canvas id="hero3d"></canvas>
+  <div class="hud"><span class="dot"></span>Live feed — CNC turning • <span id="rpm">2,450</span> rpm</div>
+  <svg class="gear" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
+  <svg class="gear2" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
+  <div class="wrap">
+    <h1 id="heroTitle">Machine down? We'll get it <span class="accent">running.</span></h1>
+    <p class="sub">Since 1989, plants and contractors across Malaysia have trusted Weng Loi Machinery to repair, recondition and remake machinery parts — fast. CNC &amp; manual machining, one-stop, by engineers.</p>
+    <div class="btns">
+      <a class="btn btn-red" href="https://wa.me/60177014268?text=Hi%20Lily%2C%20I%20have%20a%20machining%20enquiry." target="_blank" rel="noopener">WhatsApp a photo of your part</a>
+      <a class="btn btn-outline" href="tel:+60177014268">Call Lily: 017-701 4268</a>
+    </div>
+    <div class="tagline">Precision <b>•</b> Reliability <b>•</b> Innovation</div>
+  </div>
+  <a class="scroll-hint" href="#services">Scroll<span>▾</span></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mtrack">
+    <span>Shaft Repair <i>•</i></span><span>CNC Turning <i>•</i></span><span>Gear Cutting <i>•</i></span><span>Screw Conveyor Rebuild <i>•</i></span><span>Milling <i>•</i></span><span>Welding &amp; Build-up <i>•</i></span><span>Prototyping <i>•</i></span><span>Reverse Engineering <i>•</i></span><span>Steel <i>•</i></span><span>Brass <i>•</i></span><span>Copper <i>•</i></span><span>Plastics &amp; Composites <i>•</i></span>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="reveal"><div class="num"><span class="count" data-to="35">0</span><em>+</em></div><div class="lbl">Years in operation</div></div>
+    <div class="reveal" style="--d:.1s"><div class="num"><span class="count" data-to="19">0</span></div><div class="lbl">Machinists &amp; engineers</div></div>
+    <div class="reveal" style="--d:.2s"><div class="num"><span class="count" data-to="40">0</span><em>+</em></div><div class="lbl">Machines in-house</div></div>
+    <div class="reveal" style="--d:.3s"><div class="num">ø<span class="count" data-to="1600">0</span><em>mm</em></div><div class="lbl">Max turning diameter</div></div>
+    <div class="reveal" style="--d:.4s"><div class="num"><span class="count" data-to="5000">0</span><em>mm</em></div><div class="lbl">Max turning length</div></div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker reveal">One-stop machine shop</div>
+    <h2 class="reveal">Everything your machinery needs, under one roof</h2>
+    <p class="lead reveal">From emergency breakdown repairs to precision new parts — in metals, non-ferrous, plastics and composites.</p>
+    <div class="grid3">
+      <div class="card reveal tilt"><div class="ico">🔧</div><h3>Repair &amp; Reconditioning</h3><p>Worn shafts, gears, rollers, screw conveyors and rotors restored to spec — so you don't wait months for an overseas replacement.</p></div>
+      <div class="card reveal tilt" style="--d:.1s"><div class="ico">⚙️</div><h3>CNC Machining</h3><p>CNC lathes and a 12,000 rpm high-speed machining centre for accurate, repeatable parts — one-off or batch production.</p></div>
+      <div class="card reveal tilt" style="--d:.2s"><div class="ico">🛠️</div><h3>Manual Machining</h3><p>Over 20 manual lathes and mills handle the big, odd and urgent jobs CNC shops turn away — up to ø1,600&nbsp;mm and 5&nbsp;m long.</p></div>
+      <div class="card reveal tilt"><div class="ico">📐</div><h3>Prototyping</h3><p>Turn your drawing, sample or sketch into a working part. No drawing? We can measure and reverse-engineer from the worn original.</p></div>
+      <div class="card reveal tilt" style="--d:.1s"><div class="ico">🔩</div><h3>Modification</h3><p>Adapt existing parts and machines to new requirements — resizing, re-boring, keyways, threads from M1 to M30.</p></div>
+      <div class="card reveal tilt" style="--d:.2s"><div class="ico">⚡</div><h3>Welding &amp; Fabrication</h3><p>Build-up welding on worn surfaces before re-machining, plus general fabrication to complete the job in one place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <div class="kicker reveal">Simple to start</div>
+    <h2 class="reveal">From breakdown to back in service — 3 steps</h2>
+    <div class="grid3">
+      <div class="step reveal"><div class="n">1</div><h3>Send us the part</h3><p>WhatsApp a photo, drawing or sample of the part to Lily. No formal drawing needed — a phone photo with rough dimensions is enough to start.</p></div>
+      <div class="step reveal" style="--d:.15s"><div class="n">2</div><h3>Get a quote fast</h3><p>Our engineers assess whether to repair, recondition or make new, and quote you the practical, economical option.</p></div>
+      <div class="step reveal" style="--d:.3s"><div class="n">3</div><h3>Collect your part</h3><p>Machined, checked and ready to install. For urgent breakdowns, tell us — we understand downtime costs you money every hour.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="kicker reveal">Our work</div>
+    <h2 class="reveal">Real parts. Real repairs. Real machines back online.</h2>
+    <p class="lead reveal">A sample of jobs from our workshop — click any photo to view. From multi-tonne shafts to precision bushings.</p>
+    <div class="gallery" id="gallery">
+      <figure class="reveal vid"><video src="assets/video/cnc-turning.mp4" poster="assets/video/cnc-turning-poster.jpg" autoplay muted loop playsinline></video><figcaption>CNC turning — in action now</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/work-gear-shaft-repair.jpg" alt="Gear and shaft assembly repair on lathe" loading="lazy"><figcaption>Gear &amp; shaft reconditioning</figcaption></figure>
+      <figure class="reveal" style="--d:.05s"><img src="assets/img/work-screw-conveyor.jpg" alt="Screw conveyor machining" loading="lazy"><figcaption>Screw conveyor rebuild</figcaption></figure>
+      <figure class="reveal" style="--d:.1s"><img src="assets/img/work-perforated-drum.jpg" alt="Perforated drum fabrication" loading="lazy"><figcaption>Perforated drum</figcaption></figure>
+      <figure class="reveal" style="--d:.15s"><img src="assets/img/work-large-turning.jpg" alt="Large diameter turning on manual lathe" loading="lazy"><figcaption>Large-diameter turning</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/work-flanges.jpg" alt="Machined steel flanges" loading="lazy"><figcaption>Custom flanges</figcaption></figure>
+      <figure class="reveal" style="--d:.05s"><img src="assets/img/work-splined-shafts.jpg" alt="Batch of splined shafts" loading="lazy"><figcaption>Batch-produced shafts</figcaption></figure>
+      <figure class="reveal" style="--d:.1s"><img src="assets/img/work-brass-gear.jpg" alt="Machined brass gear" loading="lazy"><figcaption>Brass gear cutting</figcaption></figure>
+      <figure class="reveal" style="--d:.15s"><img src="assets/img/work-copper-nozzles.jpg" alt="Machined copper nozzles" loading="lazy"><figcaption>Copper components</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/work-machined-nuts.jpg" alt="Large machined hex nuts" loading="lazy"><figcaption>Heavy hex components</figcaption></figure>
+      <figure class="reveal" style="--d:.05s"><img src="assets/img/work-precision-bushings.jpg" alt="Precision bushings set" loading="lazy"><figcaption>Precision bushings</figcaption></figure>
+      <figure class="reveal" style="--d:.1s"><img src="assets/img/workshop-long-lathe.jpg" alt="Long-bed lathe machining a roller" loading="lazy"><figcaption>5-metre long-bed turning</figcaption></figure>
+      <figure class="reveal" style="--d:.15s"><img src="assets/img/cnc-machine.jpg" alt="CNC lathe in operation" loading="lazy"><figcaption>CNC turning</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/work-rotor-repair.jpg" alt="Electric motor rotor mounted on lathe for reconditioning" loading="lazy"><figcaption>Motor rotor reconditioning</figcaption></figure>
+      <figure class="reveal" style="--d:.05s"><img src="assets/img/work-large-ring.jpg" alt="Very large steel ring mounted on faceplate chuck" loading="lazy"><figcaption>Large ring machining</figcaption></figure>
+      <figure class="reveal" style="--d:.1s"><img src="assets/img/work-auger-shaft.jpg" alt="Screw auger shaft with large flights on lathe" loading="lazy"><figcaption>Auger shaft repair</figcaption></figure>
+      <figure class="reveal" style="--d:.15s"><img src="assets/img/work-paddle-shaft.jpg" alt="Mixer paddle shaft between centres on lathe" loading="lazy"><figcaption>Mixer paddle shaft</figcaption></figure>
+      <figure class="reveal"><img src="assets/img/work-roller-finishing.jpg" alt="Polished cylinder roller on long-bed lathe" loading="lazy"><figcaption>Precision roller finishing</figcaption></figure>
+      <figure class="reveal" style="--d:.05s"><img src="assets/img/work-countersunk-pins.jpg" alt="Batch of large machined countersunk pins" loading="lazy"><figcaption>Batch production — heavy pins</figcaption></figure>
+      <figure class="reveal" style="--d:.1s"><img src="assets/img/work-threaded-fittings.jpg" alt="Assorted machined threaded fittings, plugs and adapters" loading="lazy"><figcaption>Threaded fittings &amp; adapters</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="caps" id="capabilities">
+  <div class="wrap">
+    <div class="kicker reveal">Production facilities</div>
+    <h2 class="reveal">Capacity that covers small precision to very large</h2>
+    <p class="lead reveal">Few shops in the region can swing ø1,600&nbsp;mm or turn 5-metre shafts. We do both — alongside high-speed CNC work.</p>
+    <div class="cols">
+      <div class="reveal-left">
+        <table>
+          <thead><tr><th>Machine group</th><th>Qty</th><th>Capacity</th></tr></thead>
+          <tbody>
+          <tr><td>Horizontal lathes (manual)</td><td>24</td><td>Up to ø1,600&nbsp;mm dia / 5,000&nbsp;mm length</td></tr>
+          <tr><td>Vertical milling machines</td><td>11</td><td>Tables up to 1,600&nbsp;mm</td></tr>
+          <tr><td>CNC lathes</td><td>3</td><td>Up to ø440&nbsp;mm / 820&nbsp;mm, incl. high-precision</td></tr>
+          <tr><td>CNC machining centre</td><td>1</td><td>12,000&nbsp;rpm, 1,000 × 500&nbsp;mm table, 700&nbsp;kg</td></tr>
+          <tr><td>Radial arm drills</td><td>3</td><td>ø1–50&nbsp;mm, 1,100&nbsp;mm radius</td></tr>
+          <tr><td>Slotters, shaper, tapping</td><td>6</td><td>Keyways to ø600&nbsp;mm, taps M1–M30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="reveal-right">
+        <div class="capstats">
+          <div class="capstat"><div class="v">ø<span class="count" data-to="1600">0</span> mm</div><div class="k">Max swing diameter</div></div>
+          <div class="capstat"><div class="v"><span class="count" data-to="5000">0</span> mm</div><div class="k">Max turning length</div></div>
+          <div class="capstat"><div class="v"><span class="count" data-to="12000">0</span> rpm</div><div class="k">CNC spindle speed</div></div>
+          <div class="capstat"><div class="v">M1–M30</div><div class="k">Tapping range</div></div>
+        </div>
+        <img class="machimg" src="assets/img/work-gear-closeup.jpg" alt="Large ring gear and shaft being machined on lathe" loading="lazy" data-cap="Large ring gear &amp; shaft on lathe">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="kicker reveal">Since 1989</div>
+    <h2 class="reveal">Built on 35+ years of keeping plants running</h2>
+    <div class="cols">
+      <div class="reveal-left">
+        <p>When a machine stops, everything stops. That's the problem Weng Loi Machinery has solved for plants, mills and contractors since 1989 — hundreds of clients served by consulting, designing and manufacturing optimised engineering parts, delivered by engineers.</p>
+        <p>Founded by Choo Tuon Loi, a machinist with over 50 years at the lathe, the company today runs a 19-person team that combines old-school machining craft with degree-qualified mechanical engineers and modern CNC capability.</p>
+        <p>We work across the full range of materials — steels, non-ferrous metals, plastics and composites — and we're investing ahead: 3D scanning, SLA/SLS 3D printing and multi-axis machining are on our roadmap.</p>
+      </div>
+      <div class="imgwrap reveal-right">
+        <img src="assets/img/hero-machinist.jpg" alt="Founder machining a component at the lathe" loading="lazy">
+        <div class="badge">SINCE 1989</div>
+      </div>
+    </div>
+    <div class="team">
+      <div class="member reveal"><img src="assets/img/team-choo-tuon-loi.jpg" alt="Choo Tuon Loi" loading="lazy"><h4>Choo Tuon Loi</h4><div class="role">Founder</div><p>50+ years of machining across metals, non-ferrous, plastics and composites.</p></div>
+      <div class="member reveal" style="--d:.1s"><img src="assets/img/team-chen-chee-kwang.jpg" alt="Chen Chee Kwang" loading="lazy"><h4>Chen Chee Kwang</h4><div class="role">Chief Machinist</div><p>30 years with Weng Loi. Leads client projects and mentors junior machinists.</p></div>
+      <div class="member reveal" style="--d:.2s"><img src="assets/img/team-tee-lily.jpg" alt="Tee Lily" loading="lazy"><h4>Tee Lily</h4><div class="role">Manager</div><p>CNC machinist, B.Eng (Mechanical). Keeps our processes and technology current.</p></div>
+      <div class="member reveal" style="--d:.3s"><img src="assets/img/team-choo-weng-hoe.jpg" alt="Choo Weng Hoe" loading="lazy"><h4>Choo Weng Hoe</h4><div class="role">Technical Advisor</div><p>B.Eng (Mechanical), 20 years' experience. Solves complex machining problems.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <svg class="gear3" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
+  <div class="wrap">
+    <div class="kicker reveal" style="justify-content:center">Get a quote</div>
+    <h2 class="reveal">Send us your part today</h2>
+    <p class="lead reveal">WhatsApp a photo or drawing to Lily — she'll come back with the practical option and a price.</p>
+    <div class="btns reveal">
+      <a class="btn btn-wa" href="https://wa.me/60177014268?text=Hi%20Lily%2C%20I%20have%20a%20machining%20enquiry." target="_blank" rel="noopener">💬 WhatsApp Lily: 017-701 4268</a>
+      <a class="btn btn-outline" href="tel:+60177014268">📞 Call 017-701 4268</a>
+    </div>
+    <div class="info">
+      <div class="reveal"><h4>Workshop</h4><p>No 5 &amp; 7, Hala Menglembu Timur 1,<br>Kaw. Perindustrian Ringan<br>Menglembu Timur,<br>31450 Ipoh, Perak, Malaysia</p></div>
+      <div class="reveal" style="--d:.1s"><h4>Email</h4><a href="mailto:wlmec.eng@gmail.com">wlmec.eng@gmail.com</a></div>
+      <div class="reveal" style="--d:.2s"><h4>Find us</h4><a href="https://www.google.com/maps/search/?api=1&query=Hala+Menglembu+Timur+1+31450+Ipoh" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Weng Loi Machinery Engineering</b> 永來機械工程 — Since 1989</div>
+    <div>Precision • Reliability • Innovation</div>
+    <div>© <span id="yr"></span> Weng Loi Machinery Engineering. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/60177014268?text=Hi%20Lily%2C%20I%20have%20a%20machining%20enquiry." target="_blank" rel="noopener" aria-label="WhatsApp us">💬</a>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<div class="lb" id="lb" role="dialog" aria-label="Image viewer">
+  <button class="x" aria-label="Close">✕</button>
+  <button class="prev" aria-label="Previous">‹</button>
+  <button class="next" aria-label="Next">›</button>
+  <img id="lbImg" src="" alt="">
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Hero headline word stagger */
+var h1 = document.getElementById('heroTitle');
+if(!reduced){
+  var nodes = Array.prototype.slice.call(h1.childNodes), i = 0, frag = document.createDocumentFragment();
+  nodes.forEach(function(n){
+    if(n.nodeType === 3){
+      n.textContent.split(/\s+/).forEach(function(w){
+        if(!w) return;
+        var s = document.createElement('span'); s.className = 'w'; s.textContent = w;
+        s.style.animationDelay = (0.15 + i * 0.09) + 's'; i++;
+        frag.appendChild(s); frag.appendChild(document.createTextNode(' '));
+      });
+    } else {
+      n.classList.add('w'); n.style.animationDelay = (0.15 + i * 0.09) + 's'; i++;
+      frag.appendChild(n); frag.appendChild(document.createTextNode(' '));
+    }
+  });
+  h1.textContent = ''; h1.appendChild(frag);
+}
+
+/* Marquee: duplicate track content for seamless loop */
+var mt = document.getElementById('mtrack');
+mt.innerHTML += mt.innerHTML;
+
+/* Sticky header + progress + parallax + back-to-top */
+var hdr = document.getElementById('hdr'), prog = document.getElementById('progress'),
+    heroBg = document.getElementById('heroBg'), totop = document.getElementById('totop'),
+    ticking = false;
+function onScroll(){
+  var y = window.scrollY || window.pageYOffset;
+  hdr.classList.toggle('solid', y > 40);
+  totop.classList.toggle('show', y > 700);
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = (h > 0 ? (y / h * 100) : 0) + '%';
+  if(!reduced && y < window.innerHeight){ heroBg.style.transform = 'translateY(' + y * 0.28 + 'px)'; }
+  ticking = false;
+}
+window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+onScroll();
+totop.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}); });
+
+/* Reveal on scroll */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){ io.observe(el); });
+
+/* Count-up numbers */
+var cio = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    var el = e.target, to = parseInt(el.dataset.to, 10);
+    if(reduced){ el.textContent = to.toLocaleString(); return; }
+    var t0 = null, dur = 1600;
+    function tick(t){
+      if(!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * ease).toLocaleString();
+      if(p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+}, {threshold:.6});
+document.querySelectorAll('.count').forEach(function(el){ cio.observe(el); });
+
+/* Active nav highlight */
+var links = document.querySelectorAll('nav.menu a[href^="#"]');
+var secs = {};
+links.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if(s) secs[a.getAttribute('href')] = s; });
+var nio = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+    }
+  });
+}, {rootMargin:'-40% 0px -55% 0px'});
+Object.keys(secs).forEach(function(k){ nio.observe(secs[k]); });
+
+/* 3D tilt cards (mouse only) */
+if(!reduced && window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.tilt').forEach(function(card){
+    card.addEventListener('mousemove', function(ev){
+      var r = card.getBoundingClientRect(),
+          x = (ev.clientX - r.left) / r.width - .5,
+          y = (ev.clientY - r.top) / r.height - .5;
+      card.style.transform = 'perspective(700px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
+  });
+}
+
+/* Lightbox */
+var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+var items = Array.prototype.slice.call(document.querySelectorAll('#gallery figure:not(.vid)'));
+var extra = document.querySelector('.caps .machimg');
+var srcs = items.map(function(f){ return {src: f.querySelector('img').src, cap: f.querySelector('figcaption').textContent}; });
+if(extra) srcs.push({src: extra.src, cap: extra.dataset.cap || ''});
+var cur = 0;
+function openLb(i){ cur = (i + srcs.length) % srcs.length; lbImg.src = srcs[cur].src; lbCap.textContent = srcs[cur].cap; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+items.forEach(function(f, i){ f.addEventListener('click', function(){ openLb(i); }); });
+if(extra) extra.addEventListener('click', function(){ openLb(srcs.length - 1); });
+lb.querySelector('.x').addEventListener('click', closeLb);
+lb.querySelector('.prev').addEventListener('click', function(e){ e.stopPropagation(); openLb(cur - 1); });
+lb.querySelector('.next').addEventListener('click', function(e){ e.stopPropagation(); openLb(cur + 1); });
+lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+document.addEventListener('keydown', function(e){
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'Escape') closeLb();
+  if(e.key === 'ArrowLeft') openLb(cur - 1);
+  if(e.key === 'ArrowRight') openLb(cur + 1);
+});
+
+/* Close mobile menu on link click */
+document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click', function(){ document.querySelector('.menu').classList.remove('open'); }); });
+
+/* HUD rpm ticker */
+var rpm = document.getElementById('rpm');
+if(rpm && !reduced){ setInterval(function(){ rpm.textContent = (2440 + Math.floor(Math.random() * 30)).toLocaleString(); }, 900); }
+})();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script>
+window.addEventListener('load', function(){
+'use strict';
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var canvas = document.getElementById('hero3d');
+if (reduced || !window.THREE || !canvas || window.innerWidth < 900) return;
+
+try {
+  var renderer = new THREE.WebGLRenderer({canvas: canvas, alpha: true, antialias: true});
+} catch(err){ return; }
+document.querySelector('.hero').classList.add('has3d');
+
+var scene = new THREE.Scene();
+var W = canvas.clientWidth, H = canvas.clientHeight;
+var camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+camera.position.set(0, 0, 7.5);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(W, H, false);
+
+/* Procedural gear shape */
+function gearShape(teeth, rOut, rIn, rHole){
+  var s = new THREE.Shape(), step = Math.PI * 2 / teeth;
+  s.moveTo(Math.cos(0) * rOut, Math.sin(0) * rOut);
+  for (var i = 0; i < teeth; i++){
+    var a0 = i * step;
+    s.lineTo(Math.cos(a0 + step * .32) * rOut, Math.sin(a0 + step * .32) * rOut);
+    s.lineTo(Math.cos(a0 + step * .45) * rIn,  Math.sin(a0 + step * .45) * rIn);
+    s.lineTo(Math.cos(a0 + step * .87) * rIn,  Math.sin(a0 + step * .87) * rIn);
+    s.lineTo(Math.cos(a0 + step) * rOut,       Math.sin(a0 + step) * rOut);
+  }
+  var hole = new THREE.Path();
+  hole.absarc(0, 0, rHole, 0, Math.PI * 2, true);
+  s.holes.push(hole);
+  return s;
+}
+function wireGear(teeth, rOut, rIn, rHole, depth, color, opacity){
+  var geo = new THREE.ExtrudeGeometry(gearShape(teeth, rOut, rIn, rHole), {depth: depth, bevelEnabled: false, curveSegments: 24});
+  geo.center();
+  var edges = new THREE.EdgesGeometry(geo, 18);
+  return new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color: color, transparent: true, opacity: opacity}));
+}
+
+var group = new THREE.Group();
+var g1 = wireGear(14, 2.1, 1.7, 0.75, 0.5, 0x9fb2cc, 0.55);
+var g2 = wireGear(10, 1.05, 0.82, 0.35, 0.4, 0xE30613, 0.75);
+g2.position.set(2.55, 1.6, 0.2);
+group.add(g1); group.add(g2);
+group.rotation.x = 0.45;
+scene.add(group);
+
+/* Particle field */
+var N = 260, pos = new Float32Array(N * 3);
+for (var i = 0; i < N * 3; i += 3){
+  pos[i]     = (Math.random() - .5) * 12;
+  pos[i + 1] = (Math.random() - .5) * 8;
+  pos[i + 2] = (Math.random() - .5) * 6;
+}
+var pgeo = new THREE.BufferGeometry();
+pgeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+var points = new THREE.Points(pgeo, new THREE.PointsMaterial({color: 0x9fb2cc, size: 0.035, transparent: true, opacity: 0.5}));
+scene.add(points);
+
+/* Mouse parallax */
+var tx = 0, ty = 0;
+document.querySelector('.hero').addEventListener('mousemove', function(e){
+  tx = (e.clientX / window.innerWidth - .5) * 0.5;
+  ty = (e.clientY / window.innerHeight - .5) * 0.35;
+});
+
+var visible = true;
+new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }, {threshold: 0}).observe(canvas);
+
+function resize(){
+  var w = canvas.clientWidth, h = canvas.clientHeight;
+  if (w !== W || h !== H){ W = w; H = h; camera.aspect = W / H; camera.updateProjectionMatrix(); renderer.setSize(W, H, false); }
+}
+window.addEventListener('resize', resize);
+
+(function animate(){
+  requestAnimationFrame(animate);
+  if (!visible) return;
+  g1.rotation.z += 0.0028;
+  g2.rotation.z -= 0.0040;
+  points.rotation.y += 0.0004;
+  group.rotation.y += (tx - group.rotation.y) * 0.04;
+  group.rotation.x += (0.45 + ty - group.rotation.x) * 0.04;
+  renderer.render(scene, camera);
+})();
+});
+</script>
+
+</body>
+</html>
