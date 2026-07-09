@@ -241,12 +241,12 @@ footer b{color:#fff}
   .caps .cols,.about .cols{grid-template-columns:1fr}
   .team{grid-template-columns:repeat(2,1fr)}
   .contact .info{grid-template-columns:1fr}
-  nav.menu{position:fixed;inset:68px 0 auto 0;background:#fff;flex-direction:column;padding:20px;gap:18px;box-shadow:0 10px 20px rgba(13,43,82,.15);display:none}
+  nav.menu{position:fixed;top:68px;left:0;right:0;width:100%;background:#fff;flex-direction:column;padding:20px;gap:18px;box-shadow:0 10px 20px rgba(13,43,82,.15);display:none;z-index:300}
   nav.menu.open{display:flex}
   nav.menu.open a{color:var(--navy) !important}
   .burger{display:block}
   .gear,.gear2{display:none}
-  .hero-video,.hud{display:none}
+  .hud{display:none}
 }
 @media (max-width:520px){
   .grid3,.trust .wrap,.gallery,.team{grid-template-columns:1fr}
@@ -480,6 +480,13 @@ var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* Year */
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Mobile: use sharper portrait clip for hero video */
+var hv = document.querySelector('.hero-video');
+if(hv && window.innerWidth < 900){
+  hv.src = 'assets/video/hero-bg-mobile.mp4';
+  hv.poster = 'assets/video/hero-bg-mobile-poster.jpg';
+}
 
 /* Hero headline word stagger */
 var h1 = document.getElementById('heroTitle');
