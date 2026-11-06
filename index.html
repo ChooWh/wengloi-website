@@ -9,8 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/img/logo.png">
+<script id="lang-redirect">
+/* Old ?lang=zh links, a saved 中文 choice, or a Chinese-language browser go to /zh/. Crawlers have no saved choice. */
+(function(){try{var q=location.search.match(/[?&]lang=(en|zh)/),p=q?q[1]:localStorage.getItem('wl-lang');
+if(!p&&(navigator.language||'').toLowerCase().indexOf('zh')===0)p='zh';
+if(p==='zh')location.replace('zh/'+location.hash);}catch(e){}})();
+</script>
 <link rel="alternate" hreflang="en" href="https://www.wengloi.com/">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/?lang=zh">
+<link rel="canonical" href="https://www.wengloi.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/">
 <link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Weng Loi Machinery Engineering 永來機械工程">
@@ -300,9 +307,14 @@ footer b{color:#fff}
 /* ---------- Language switch ---------- */
 .lang{display:inline-flex;border:1.5px solid currentColor;border-radius:20px;overflow:hidden;color:var(--navy);transition:color .35s}
 header:not(.solid) .lang{color:#fff}
-.lang button{background:none;border:none;color:inherit;font:inherit;font-weight:700;font-size:12px;padding:6px 12px;cursor:pointer;letter-spacing:.5px;line-height:1.2;transition:background .2s}
-.lang button:hover{background:rgba(227,6,19,.18)}
-.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+.lang a{background:none;border:none;color:inherit;font:inherit;font-weight:700;font-size:12px;padding:6px 12px;cursor:pointer;letter-spacing:.5px;line-height:1.2;transition:background .2s;text-decoration:none}
+nav.menu .lang a::after{display:none}
+.lang a:hover{background:rgba(227,6,19,.18)}
+.lang a[aria-current="true"]{background:var(--red);color:#fff !important}
+.card .more{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--red);text-decoration:none}
+.card .more:hover{text-decoration:underline}
+.svc-links a{margin-right:14px;text-decoration:none}
+.svc-links a:hover{color:#fff}
 /* Chinese typography */
 html[lang^="zh"] body{font-family:'Montserrat','Noto Sans SC','PingFang SC','Microsoft YaHei','Heiti SC',Arial,sans-serif}
 html[lang^="zh"] h2,html[lang^="zh"] .hero h1{letter-spacing:0}
@@ -324,7 +336,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   nav.menu.open{display:flex}
   nav.menu.open a{color:var(--navy) !important}
   nav.menu.open .lang{color:var(--navy) !important}
-  nav.menu.open .lang button[aria-pressed="true"]{color:#fff}
+  nav.menu.open .lang a[aria-current="true"]{color:#fff !important}
   .burger{display:block}
   .gear,.gear2{display:none}
   .hud{display:none}
@@ -364,7 +376,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
       <a data-i18n="nav.caps" href="#capabilities">Capabilities</a>
       <a data-i18n="nav.about" href="#about">About</a>
       <a data-i18n="nav.contact" href="#contact">Contact</a>
-      <div class="lang" role="group" aria-label="Language / 语言"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">中文</button></div>
+      <div class="lang" role="group" aria-label="Language / 语言"><a href="./" data-lang="en" hreflang="en" lang="en" aria-current="true">EN</a><a href="zh/" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
       <a data-i18n="nav.wa" class="nav-cta" href="https://wa.me/60177014268?text=Hi%20Lily%2C%20I%20have%20a%20machining%20enquiry." target="_blank" rel="noopener">WhatsApp Us</a>
     </nav>
   </div>
@@ -413,9 +425,9 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
     <h2 data-i18n="svc.h2" class="reveal">Everything your machinery needs, under one roof</h2>
     <p data-i18n="svc.lead" class="lead reveal">From emergency breakdown repairs to precision new parts — in metals, non-ferrous, plastics and composites.</p>
     <div class="grid3">
-      <div class="card reveal tilt"><div class="ico">🔧</div><h3 data-i18n="svc.1.h">Repair &amp; Reconditioning</h3><p data-i18n="svc.1.p">Worn shafts, gears, rollers and rotors restored to spec — so you don't wait months for an overseas replacement.</p></div>
-      <div class="card reveal tilt" style="--d:.1s"><div class="ico">⚙️</div><h3 data-i18n="svc.2.h">CNC Machining</h3><p data-i18n="svc.2.p">CNC lathes and a high-speed machining centre for accurate, repeatable parts — one-off or batch production.</p></div>
-      <div class="card reveal tilt" style="--d:.2s"><div class="ico">🛠️</div><h3 data-i18n="svc.3.h">Manual Machining</h3><p data-i18n="svc.3.p">Over 20 manual lathes and mills handle the big, odd and urgent jobs CNC shops turn away — up to ø1,600&nbsp;mm and 4&nbsp;m long.</p></div>
+      <div class="card reveal tilt"><div class="ico">🔧</div><h3 data-i18n="svc.1.h">Repair &amp; Reconditioning</h3><p data-i18n="svc.1.p">Worn shafts, gears, rollers and rotors restored to spec — so you don't wait months for an overseas replacement.</p><a class="more" data-i18n="svc.more" href="services/breakdown-repair/">Learn more →</a></div>
+      <div class="card reveal tilt" style="--d:.1s"><div class="ico">⚙️</div><h3 data-i18n="svc.2.h">CNC Machining</h3><p data-i18n="svc.2.p">CNC lathes and a high-speed machining centre for accurate, repeatable parts — one-off or batch production.</p><a class="more" data-i18n="svc.more" href="services/cnc-machining/">Learn more →</a></div>
+      <div class="card reveal tilt" style="--d:.2s"><div class="ico">🛠️</div><h3 data-i18n="svc.3.h">Manual Machining</h3><p data-i18n="svc.3.p">Over 20 manual lathes and mills handle the big, odd and urgent jobs CNC shops turn away — up to ø1,600&nbsp;mm and 4&nbsp;m long.</p><a class="more" data-i18n="svc.more" href="services/large-turning/">Learn more →</a></div>
       <div class="card reveal tilt"><div class="ico">📐</div><h3 data-i18n="svc.4.h">Prototyping</h3><p data-i18n="svc.4.p">Turn your drawing, sample or sketch into a working part. No drawing? We can measure and reverse-engineer from the worn original.</p></div>
       <div class="card reveal tilt" style="--d:.1s"><div class="ico">🔩</div><h3 data-i18n="svc.5.h">Modification</h3><p data-i18n="svc.5.p">Adapt existing parts and machines to new requirements — resizing, re-boring, keyways and threads.</p></div>
       <div class="card reveal tilt" style="--d:.2s"><div class="ico">⚡</div><h3 data-i18n="svc.6.h">Welding &amp; Fabrication</h3><p data-i18n="svc.6.p">Build-up welding on worn surfaces before re-machining, plus general fabrication to complete the job in one place.</p></div>
@@ -542,7 +554,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   <div class="wrap">
     <div><b>Weng Loi Machinery Engineering</b> 永來機械工程 <span data-i18n="foot.since">— Since 1989</span></div>
     <div data-i18n="foot.tag">Precision • Reliability • Innovation</div>
-    <div><a href="https://www.instagram.com/weng_loi_machinery/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="svc-links"><a data-i18n="foot.s1" href="services/breakdown-repair/">Breakdown repair</a><a data-i18n="foot.s2" href="services/cnc-machining/">CNC machining</a><a data-i18n="foot.s3" href="services/large-turning/">Large turning</a><a href="https://www.instagram.com/weng_loi_machinery/" target="_blank" rel="noopener">Instagram</a></div>
     <div>© <span id="yr"></span> <span data-i18n="foot.rights">Weng Loi Machinery Engineering. All rights reserved.</span></div>
   </div>
 </footer>
@@ -694,59 +706,12 @@ document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('cl
 var rpm = document.getElementById('rpm');
 if(rpm && !reduced){ setInterval(function(){ rpm.textContent = (2440 + Math.floor(Math.random() * 30)).toLocaleString(); }, 900); }
 
-/* ---------- Language: English / 中文 ---------- */
-var ZH = {"ct.hours": "营业时间", "ct.hoursv": "周一至周五：上午 8:30 – 晚上 7:30<br>周六至周日：上午 8:30 – 下午 5:30", "ct.ig": "Instagram @weng_loi_machinery →", "hud": "实时画面 — 数控车削 •", "scroll": "向下滚动", "foot.since": "— 创立于1989年", "foot.rights": "永來機械工程 版权所有。", "nav.services": "服务项目", "nav.work": "作品案例", "nav.caps": "生产能力", "nav.about": "关于我们", "nav.contact": "联系我们", "nav.wa": "WhatsApp 联系", "logo.since": "— 始于 1989 —", "hero.h1": "设备停机了？ 我们让它 <span class=\"accent\">重新运转。</span>", "hero.sub": "自1989年起，马来西亚各地的工厂与承包商一直信赖永來机械，快速维修、翻新及重新制造机械零件。数控与手动加工一站式完成，由工程师团队负责。", "hero.btn1": "WhatsApp 发送零件照片", "hero.btn2": "致电 Lily：017-701 4268", "hero.tag": "精准 <b>•</b> 可靠 <b>•</b> 创新", "trust.years": "营运年数", "trust.staff": "机师与工程师", "trust.machines": "自有机器", "trust.dia": "最大车削直径", "trust.len": "最大车削长度", "svc.kicker": "一站式机械加工厂", "svc.h2": "机械所需的一切，一站解决", "svc.lead": "从紧急故障抢修到精密新零件制造——涵盖钢铁、有色金属、塑料及复合材料。", "svc.1.h": "维修与翻新", "svc.1.p": "磨损的轴、齿轮、滚筒和转子均可修复至规格要求，无需苦等数月进口替换件。", "svc.2.h": "数控加工", "svc.2.p": "配备数控车床及高速加工中心，可精确、稳定地加工零件，单件或批量生产皆可。", "svc.3.h": "手动加工", "svc.3.p": "20多台手动车床和铣床，承接数控厂拒接的大型、异形和紧急工件——直径最大 ø1,600&nbsp;mm，长度达 4&nbsp;米。", "svc.4.h": "样件制作", "svc.4.p": "将您的图纸、样品或草图变成可用的零件。没有图纸？我们可从磨损的原件测量并逆向还原。", "svc.5.h": "改造加工", "svc.5.p": "根据新要求改造现有零件与机器——调整尺寸、重新镗孔、键槽及螺纹加工。", "svc.6.h": "焊接与制造", "svc.6.p": "磨损表面先堆焊再重新加工，另提供一般制造加工，让整项工作在同一处完成。", "step.kicker": "轻松开始", "step.h2": "从故障到恢复运行——只需3步", "step.1.h": "把零件发给我们", "step.1.p": "通过 WhatsApp 把零件的照片、图纸或样品发给 Lily。无需正式图纸——手机照片加大概尺寸即可开始。", "step.2.h": "快速获得报价", "step.2.p": "我们的工程师会评估应该维修、翻新还是重新制造，并为您报出实用、经济的方案。", "step.3.h": "领取您的零件", "step.3.p": "加工完成、检验合格，可直接安装。如属紧急故障请告知我们——我们明白停机的每一小时都是损失。", "work.kicker": "作品案例", "work.h2": "真实的零件，真实的维修，真实恢复运转的机器。", "work.lead": "以下是我们车间的部分作品——点击图片可放大查看。从数吨重的轴到精密轴套。", "cap.cncnow": "数控车削——实时运行中", "cap.gear": "齿轮与轴类翻新", "cap.drum": "冲孔滚筒", "cap.ring": "大直径车削", "cap.flange": "定制法兰", "cap.spline": "批量生产的轴", "cap.brass": "黄铜齿轮加工", "cap.copper": "紫铜零件", "cap.hex": "重型六角零件", "cap.bush": "精密轴套", "cap.longbed": "长床身车削", "cap.cnc": "数控车削", "cap.rotor": "电机转子翻新", "cap.auger": "螺旋轴维修", "cap.paddle": "搅拌桨叶轴", "cap.roller": "精密滚筒精加工", "cap.pins": "批量生产——重型销", "cap.thread": "螺纹接头与转接件", "alt.gear": "车床上维修齿轮与轴组件", "alt.auger2": "长床身车床上加工螺旋轴", "alt.drum": "冲孔滚筒制造", "alt.ring": "安装在车床花盘上的超大型环件", "alt.flange": "加工完成的钢制法兰", "alt.spline": "一批花键轴", "alt.brass": "加工完成的黄铜齿轮", "alt.copper": "加工完成的紫铜喷嘴", "alt.hex": "加工完成的大型六角螺母", "alt.bush": "一套精密轴套", "alt.longbed": "长床身车床加工滚筒", "alt.cnc": "运行中的数控车床", "alt.rotor": "装夹在车床上等待翻新的电机转子", "alt.auger": "车床上带大螺旋叶片的螺旋输送轴", "alt.paddle": "顶尖之间装夹的搅拌桨叶轴", "alt.roller": "长床身车床上抛光的圆柱滚筒", "alt.pins": "一批大型沉头销", "alt.thread": "各类加工完成的螺纹接头、堵头与转接件", "alt.cncc": "机师操作运行中的数控加工中心", "alt.gearc": "车床上加工中的大型齿圈与轴", "alt.founder": "创办人在车床上加工零件", "caps.kicker": "生产设备", "caps.h2": "从小型精密件到超大工件，加工能力全覆盖", "caps.lead": "区内少有工厂能加工直径 ø1,600&nbsp;mm 的工件或车削4米长的轴。这两样我们都能做——同时承接高速数控加工。", "caps.th1": "机器类别", "caps.th2": "数量", "caps.th3": "加工能力", "caps.r1a": "卧式车床（手动）", "caps.r1b": "最大直径 ø1,600&nbsp;mm／长度 4,000&nbsp;mm", "caps.r2a": "立式铣床", "caps.r2b": "工作台最大 1,600&nbsp;mm", "caps.r3a": "数控车床", "caps.r3b": "最大 ø440&nbsp;mm／820&nbsp;mm，含高精度机型", "caps.r4a": "数控加工中心", "caps.r4b": "工作台 1,000 × 500&nbsp;mm，最大载重 700&nbsp;kg", "caps.r5a": "摇臂钻床", "caps.r5b": "孔径 ø1–50&nbsp;mm，臂展半径 1,100&nbsp;mm", "caps.r6a": "插床、牛头刨床、攻丝机", "caps.r6b": "键槽加工至 ø600&nbsp;mm", "caps.swing": "最大回转直径", "imgcap.cnc": "数控加工中心", "imgcap.gear": "车床上的大型齿圈与轴", "about.kicker": "创立于1989年", "about.h2": "凭借35年以上的经验，让工厂持续运转", "about.p1": "机器一停，一切都停。自1989年起，永來机械一直为工厂、加工厂和承包商解决这个难题——数百家客户通过我们的咨询、设计与制造获得优化的工程零件，全程由工程师负责。", "about.p2": "公司由拥有50多年车床经验的机师 Choo Tuon Loi 创办，如今拥有19人团队，将传统机械加工工艺、具学位资格的机械工程师与现代数控能力结合在一起。", "about.p3": "我们可加工各类材料——钢材、有色金属、塑料及复合材料——并持续投资未来：3D扫描、SLA/SLS 3D打印及多轴加工均在我们的发展规划之中。", "about.badge": "创立于1989", "team.r1": "创办人", "team.p1": "50多年机械加工经验，涵盖钢铁、有色金属、塑料及复合材料。", "team.r2": "首席机师", "team.p2": "在永來机械服务30年，负责带领客户项目并指导年轻机师。", "team.r3": "经理", "team.p3": "数控机师，机械工程学士（B.Eng）。负责让我们的工艺与技术与时俱进。", "team.r4": "技术顾问", "team.p4": "机械工程学士（B.Eng），20年经验。负责解决复杂的加工难题。", "ct.kicker": "获取报价", "ct.h2": "今天就把您的零件发给我们", "ct.lead": "通过 WhatsApp 把照片或图纸发给 Lily——她会回复实用的方案和价格。", "ct.btn1": "💬 WhatsApp Lily：017-701 4268", "ct.btn2": "📞 致电 017-701 4268", "ct.workshop": "车间地址", "ct.addr": "No 5 &amp; 7, Hala Menglembu Timur 1,<br>Kaw. Perindustrian Ringan<br>Menglembu Timur,<br>31450 怡保，霹雳州，马来西亚", "ct.email": "电子邮件", "ct.find": "地图位置", "ct.map": "在 Google 地图中打开 →", "foot.tag": "精准 • 可靠 • 创新", "meta.title": "永來機械工程 Weng Loi Machinery — 自1989年专业机械加工、维修与翻新 | 马来西亚怡保", "meta.desc": "自1989年起位于怡保的一站式机械加工厂。提供数控与手动加工、机械零件维修与翻新，服务工厂、厂房及承包商。车削直径最大可达 ø1,600mm。欢迎立即通过 WhatsApp 发送您的零件图片。", "wa.text": "你好 Lily，我想咨询机械加工。"};
-var MARQ = {
-  en: ['Shaft Repair','CNC Turning','Gear Cutting','Milling','Welding &amp; Build-up','Prototyping','Reverse Engineering','Steel','Brass','Copper','Plastics &amp; Composites'],
-  zh: ['轴类维修','数控车削','齿轮加工','铣削','焊接与堆焊','样件制作','逆向工程','钢材','黄铜','紫铜','塑料与复合材料']
-};
-var WA_EN = 'Hi Lily, I have a machining enquiry.';
-var EN = {};
-var metaDesc = document.querySelector('meta[name="description"]');
-EN['meta.title'] = document.title;
-EN['meta.desc'] = metaDesc ? metaDesc.getAttribute('content') : '';
-EN['wa.text'] = WA_EN;
-document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(!(k in EN)) EN[k] = el.innerHTML; });
-document.querySelectorAll('[data-i18n-alt]').forEach(function(el){ var k = el.getAttribute('data-i18n-alt'); EN[k] = el.getAttribute('alt'); });
-document.querySelectorAll('[data-i18n-cap]').forEach(function(el){ var k = el.getAttribute('data-i18n-cap'); EN[k] = el.getAttribute('data-cap'); });
-
-var curLang = 'en', fontLoaded = false;
-function tx(k){ return (curLang === 'zh' && ZH[k] !== undefined) ? ZH[k] : EN[k]; }
-function loadCJKFont(){
-  if(fontLoaded) return; fontLoaded = true;
-  var l = document.createElement('link'); l.rel = 'stylesheet';
-  l.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap';
-  document.head.appendChild(l);
-}
-function setLang(lang, persist){
-  curLang = (lang === 'zh') ? 'zh' : 'en';
-  document.documentElement.lang = curLang === 'zh' ? 'zh-Hans' : 'en';
-  if(curLang === 'zh') loadCJKFont();
-  document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML = tx(el.getAttribute('data-i18n')); });
-  document.querySelectorAll('[data-i18n-alt]').forEach(function(el){ el.setAttribute('alt', tx(el.getAttribute('data-i18n-alt'))); });
-  document.querySelectorAll('[data-i18n-cap]').forEach(function(el){ el.setAttribute('data-cap', tx(el.getAttribute('data-i18n-cap'))); });
-  document.title = tx('meta.title');
-  if(metaDesc) metaDesc.setAttribute('content', tx('meta.desc'));
-  var m = MARQ[curLang].map(function(t){ return '<span>' + t + ' <i>•</i></span>'; }).join('');
-  mt.innerHTML = m + m;
-  var wa = encodeURIComponent(tx('wa.text'));
-  document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a){ a.href = a.href.replace(/([?&]text=)[^&]*/, '$1' + wa); });
-  document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang') === curLang ? 'true' : 'false'); });
-  staggerHero();
-  if(persist){ try{ localStorage.setItem('wl-lang', curLang); }catch(e){} }
-}
-document.querySelectorAll('.lang button').forEach(function(b){
-  b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); });
+/* ---------- Language: English at /, 中文 at /zh/ (separate pages so search engines index both) ---------- */
+mt.innerHTML += mt.innerHTML;
+staggerHero();
+document.querySelectorAll('.lang a').forEach(function(a){
+  a.addEventListener('click', function(){ try{ localStorage.setItem('wl-lang', a.getAttribute('data-lang')); }catch(e){} });
 });
-var startLang = null;
-var qm = (window.location.search || '').match(/[?&]lang=(en|zh)/);
-if(qm) startLang = qm[1];
-var canon = document.createElement('link'); canon.rel = 'canonical';
-canon.href = 'https://www.wengloi.com/' + (qm && qm[1] === 'zh' ? '?lang=zh' : '');
-document.head.appendChild(canon);
-if(!startLang){ try{ startLang = localStorage.getItem('wl-lang'); }catch(e){} }
-if(!startLang){ startLang = ((navigator.language || '').toLowerCase().indexOf('zh') === 0) ? 'zh' : 'en'; }
-setLang(startLang, false);
 })();
 </script>
 
