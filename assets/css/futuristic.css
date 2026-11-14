@@ -34,8 +34,7 @@ header.solid nav.menu a.active{color:var(--cyan)}
 .hero h1 .accent::after{background:rgba(34,211,238,.35)}
 .hero .tagline{color:#7dd3fc}
 .hero .tagline b{color:var(--cyan)}
-.hud{border-color:var(--edge);background:rgba(6,20,42,.55);box-shadow:0 0 22px rgba(34,211,238,.18) inset,0 0 18px rgba(34,211,238,.12)}
-.hud .dot{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+
 .scroll-hint{color:#7dd3fc}
 
 .fx-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
