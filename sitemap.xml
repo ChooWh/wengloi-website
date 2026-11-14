@@ -56,4 +56,18 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/large-turning/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/large-turning/"/>
   </url>
+  <url>
+    <loc>https://www.wengloi.com/faq/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/faq/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/zh/faq/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/faq/"/>
+  </url>
 </urlset>

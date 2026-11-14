@@ -282,7 +282,7 @@ def build_service(svc, lang, zh):
 
 # ------------------------------------------------------------------ sitemap
 def build_sitemap(lastmod):
-    pairs = [("", "zh/")] + [("services/%s/" % s["slug"], "zh/services/%s/" % s["slug"]) for s in SERVICES]
+    pairs = [("", "zh/")] + [("services/%s/" % s["slug"], "zh/services/%s/" % s["slug"]) for s in SERVICES] + [("faq/", "zh/faq/")]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for en, zh in pairs:
