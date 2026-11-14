@@ -1,0 +1,77 @@
+/* Shared styles for the service pages (services/*, zh/services/*). Colours match index.html. */
+:root{--navy:#0D2B52;--red:#E30613;--steel:#6B6F76;--light:#F2F4F7;--wa:#25D366;--maxw:1000px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',Arial,sans-serif;color:var(--navy);background:#fff;line-height:1.65}
+html[lang^="zh"] body{font-family:'Montserrat','Noto Sans SC','PingFang SC','Microsoft YaHei',Arial,sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+header{background:#fff;box-shadow:0 2px 18px rgba(13,43,82,.12);position:sticky;top:0;z-index:20}
+header .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;flex-wrap:wrap;padding:8px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{height:42px;width:auto}
+.logo .cn{font-size:13px;font-weight:700;letter-spacing:2px;line-height:1.2}
+.logo .en{font-size:11px;font-weight:800;letter-spacing:.5px}
+.menu{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.menu a{text-decoration:none}
+.menu a:hover{color:var(--red)}
+.lang{display:inline-flex;border:1.5px solid var(--navy);border-radius:20px;overflow:hidden}
+.lang a{font-size:12px;font-weight:700;padding:5px 12px}
+.lang a[aria-current="true"]{background:var(--red);color:#fff}
+.cta-wa{background:var(--wa);color:#fff !important;padding:9px 16px;border-radius:8px;font-weight:700}
+
+.hero{background:linear-gradient(135deg,#0D2B52,#123563);color:#fff;padding:48px 0 52px}
+.crumbs{font-size:13px;color:#9fb2cc;margin-bottom:14px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:#fff}
+h1{font-size:clamp(28px,4.6vw,42px);font-weight:800;line-height:1.18;margin-bottom:14px}
+.hero p{font-size:17px;color:#d6e0ee;max-width:720px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-line{border:2px solid #fff;color:#fff}
+
+main section{padding:48px 0;border-bottom:1px solid #e6e9ef}
+main section:last-child{border-bottom:none}
+h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;line-height:1.25;margin-bottom:14px}
+main p{margin-bottom:12px;color:#33445c;max-width:760px}
+ul.ticks{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;margin-top:8px}
+ul.ticks li{padding-left:22px;position:relative;color:#33445c}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:3px;background:var(--red)}
+table{border-collapse:collapse;width:100%;max-width:760px;margin-top:8px;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e6e9ef}
+th{background:var(--light);font-weight:700}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.photos figure{margin:0}
+.photos img{width:100%;height:210px;object-fit:cover;border-radius:10px}
+.photos figcaption{font-size:13px;color:var(--steel);margin-top:6px}
+ol.steps{padding-left:20px;max-width:760px}
+ol.steps li{margin-bottom:10px;color:#33445c}
+.faq details{border:1px solid #e6e9ef;border-radius:10px;padding:14px 18px;margin-bottom:10px;max-width:820px}
+.faq summary{font-weight:700;cursor:pointer}
+.faq details p{margin:10px 0 0}
+.related{display:flex;gap:12px;flex-wrap:wrap}
+.related a{border:1.5px solid var(--navy);border-radius:8px;padding:10px 16px;font-weight:700;text-decoration:none}
+.related a:hover{border-color:var(--red);color:var(--red)}
+
+.contact{background:var(--light)}
+.contact .btn-line{border-color:var(--navy);color:var(--navy)}
+.contact .info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;font-size:14px;color:#33445c}
+.contact h3{font-size:14px;margin-bottom:4px;color:var(--navy)}
+
+footer{background:#081c38;color:#9fb2cc;padding:24px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer b{color:#fff}
+footer a{text-decoration:none;margin-right:14px}
+footer a:hover{color:#fff}
+
+@media (max-width:760px){
+  .photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  ul.ticks,.contact .info{grid-template-columns:1fr}
+  .menu .hide-sm{display:none}
+}
+@media (max-width:480px){
+  .photos{grid-template-columns:1fr}
+  .photos img{height:220px}
+}

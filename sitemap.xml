@@ -2,16 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.wengloi.com/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/"/>
   </url>
   <url>
-    <loc>https://www.wengloi.com/?lang=zh</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://www.wengloi.com/zh/</loc>
+    <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/services/breakdown-repair/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/breakdown-repair/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/breakdown-repair/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/breakdown-repair/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/zh/services/breakdown-repair/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/breakdown-repair/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/breakdown-repair/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/breakdown-repair/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/services/cnc-machining/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/cnc-machining/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/cnc-machining/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/cnc-machining/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/zh/services/cnc-machining/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/cnc-machining/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/cnc-machining/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/cnc-machining/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/services/large-turning/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/large-turning/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/large-turning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/large-turning/"/>
+  </url>
+  <url>
+    <loc>https://www.wengloi.com/zh/services/large-turning/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.wengloi.com/services/large-turning/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.wengloi.com/zh/services/large-turning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wengloi.com/services/large-turning/"/>
   </url>
 </urlset>
