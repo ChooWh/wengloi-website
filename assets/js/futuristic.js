@@ -39,39 +39,50 @@
     var loops = [];
 
     if (wide) {
-      var svg = el('svg', { 'class': 'hud-art', viewBox: '0 0 600 460', 'aria-hidden': 'true', focusable: 'false' });
+      /* Two separate machines, drawn as two separate panels:
+         1) long-bed lathe: shafts up to 4,000 mm long, max Ø300 mm
+         2) FUJISEIKI face lathe: flanges and plates up to Ø1,600 mm */
+      var svg = el('svg', { 'class': 'hud-art', viewBox: '0 0 600 480', 'aria-hidden': 'true', focusable: 'false' });
       hero.insertBefore(svg, hero.querySelector('.hud'));
-      var P = function (d, cls) { return el('path', { d: d, 'class': 'd ' + (cls || '') }, svg); };
-      /* corner brackets */
-      P('M10 40V10H40'); P('M560 10H590V40'); P('M10 420V450H40'); P('M590 420V450H560', '');
-      /* centre line */
-      P('M20 190H580', 'thin dash');
-      /* stepped shaft, side view */
-      P('M50 165H120V145H250V120H400V150H530V230H400V260H250V235H120V215H50Z', 'shaft');
-      P('M250 120V260', 'thin'); P('M120 145V235', 'thin'); P('M400 120V260', 'thin'); /* shoulders */
-      P('M300 178H360V202H300Z', 'thin'); /* keyway */
-      /* dimension lines */
-      P('M50 300H530', 'dim'); P('M50 290V310', 'dim'); P('M530 290V310', 'dim');
-      P('M50 300l12 -5v10Z M530 300l-12 -5v10Z', 'dim');
-      P('M560 120V260', 'dim'); P('M550 120H570', 'dim'); P('M550 260H570', 'dim');
-      /* cross-section */
-      var cx = 470, cy = 385;
-      el('circle', { cx: cx, cy: cy, r: 52, 'class': 'd' }, svg);
-      el('circle', { cx: cx, cy: cy, r: 34, 'class': 'd thin' }, svg);
-      el('circle', { cx: cx, cy: cy, r: 12, 'class': 'd' }, svg);
-      P('M' + (cx - 66) + ' ' + cy + 'H' + (cx + 66) + 'M' + cx + ' ' + (cy - 66) + 'V' + (cy + 66), 'thin dash');
-      /* idle layer: scanning cursor, pulse ring, nodes */
-      var scan = el('line', { 'class': 'hud-scan', x1: 0, y1: 100, x2: 0, y2: 280 }, svg);
-      var pulse = el('circle', { 'class': 'hud-pulse', cx: cx, cy: cy, r: 52 }, svg);
-      [[120, 145], [250, 120], [400, 150], [530, 190]].forEach(function (p) {
-        el('circle', { 'class': 'node', cx: p[0], cy: p[1], r: 3.5 }, svg);
-      });
-      var T = function (x, y, t, anchor) {
-        var n = el('text', { x: x, y: y }, svg); n.textContent = t;
+      var gA = el('g', { transform: 'translate(0,-50)' }, svg), gB = el('g', {}, svg);
+      var P = function (g, d, cls) { return el('path', { d: d, 'class': 'd ' + (cls || '') }, g); };
+      var T = function (g, x, y, t, anchor) {
+        var n = el('text', { x: x, y: y }, g); n.textContent = t;
         if (anchor) n.setAttribute('text-anchor', anchor);
         return n;
       };
-      T(290, 326, '4,000 mm', 'middle'); T(560, 106, 'Ø1,600', 'middle'); T(262, 108, '±0.01');
+      /* panel frames (corner brackets) */
+      P(svg, 'M10 40V20H30 M570 20H590V40 M10 270V290H30 M590 270V290H570');
+      P(svg, 'M10 340V320H30 M570 320H590V340 M10 450V470H30 M590 450V470H570');
+      /* panel 1: long-bed lathe, stepped shaft side view */
+      P(gA, 'M20 190H580', 'thin dash');
+      P(gA, 'M50 165H120V145H250V120H400V150H530V230H400V260H250V235H120V215H50Z', 'shaft');
+      P(gA, 'M250 120V260', 'thin'); P(gA, 'M120 145V235', 'thin'); P(gA, 'M400 120V260', 'thin');
+      P(gA, 'M300 178H360V202H300Z', 'thin');
+      P(gA, 'M50 300H530', 'dim'); P(gA, 'M50 290V310', 'dim'); P(gA, 'M530 290V310', 'dim');
+      P(gA, 'M50 300l12 -5v10Z M530 300l-12 -5v10Z', 'dim');
+      P(gA, 'M560 120V260', 'dim'); P(gA, 'M550 120H570', 'dim'); P(gA, 'M550 260H570', 'dim');
+      /* panel 2: face lathe, flange seen face-on */
+      var cx = 130, cy = 395;
+      el('circle', { cx: cx, cy: cy, r: 52, 'class': 'd' }, gB);
+      el('circle', { cx: cx, cy: cy, r: 34, 'class': 'd thin' }, gB);
+      el('circle', { cx: cx, cy: cy, r: 12, 'class': 'd' }, gB);
+      for (var b = 0; b < 6; b++) {
+        var a = b * Math.PI / 3;
+        el('circle', { cx: cx + 43 * Math.cos(a), cy: cy + 43 * Math.sin(a), r: 3, 'class': 'd thin' }, gB);
+      }
+      P(gB, 'M' + (cx - 66) + ' ' + cy + 'H' + (cx + 66) + 'M' + cx + ' ' + (cy - 66) + 'V' + (cy + 66), 'thin dash');
+      P(gB, 'M' + (cx - 52) + ' 462H' + (cx + 52) + 'M' + (cx - 52) + ' 456V468M' + (cx + 52) + ' 456V468', 'dim');
+      /* idle layer */
+      var scan = el('line', { 'class': 'hud-scan', x1: 0, y1: 100, x2: 0, y2: 280 }, gA);
+      var pulse = el('circle', { 'class': 'hud-pulse', cx: cx, cy: cy, r: 52 }, gB);
+      [[120, 145], [250, 120], [400, 150], [530, 190]].forEach(function (p) {
+        el('circle', { 'class': 'node', cx: p[0], cy: p[1], r: 3.5 }, gA);
+      });
+      T(svg, 40, 44, 'LONG-BED LATHE');
+      T(gA, 290, 326, '4,000 mm', 'middle'); T(gA, 560, 106, 'Ø300 max', 'middle'); T(gA, 262, 108, '±0.01');
+      T(svg, 40, 344, 'FACE LATHE · FLANGES & PLATES');
+      T(svg, 240, 392, 'Ø1,600 mm'); T(svg, 240, 414, 'FLANGE / PLATE');
 
       var geo = A.svg.createDrawable(svg.querySelectorAll('.d'));
       animate(geo, { draw: ['0 0', '0 1'], duration: 1800, delay: stagger(110), ease: 'inOutQuad' });
