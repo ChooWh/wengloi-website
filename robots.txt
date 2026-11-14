@@ -1,4 +1,36 @@
+# Weng Loi Machinery Engineering, Ipoh. Public site: all crawlers welcome.
+# AI search and answer-engine crawlers are listed explicitly so the intent is on record.
+# To block model-training crawlers later, change Allow to Disallow under that bot only.
+
 User-agent: *
+Allow: /
+
+# OpenAI (ChatGPT search, browsing, training)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude search, browsing, training)
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini training/grounding control and Apple Intelligence
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.wengloi.com/sitemap.xml
