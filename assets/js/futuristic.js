@@ -43,7 +43,7 @@
          1) long-bed lathe: shafts up to 4,000 mm long, max Ø300 mm
          2) FUJISEIKI face lathe: flanges and plates up to Ø1,600 mm */
       var svg = el('svg', { 'class': 'hud-art', viewBox: '0 0 600 480', 'aria-hidden': 'true', focusable: 'false' });
-      hero.insertBefore(svg, hero.querySelector('.hud'));
+      hero.appendChild(svg);
       var gA = el('g', { transform: 'translate(0,-80)' }, svg), gB = el('g', {}, svg);
       var P = function (g, d, cls) { return el('path', { d: d, 'class': 'd ' + (cls || '') }, g); };
       var T = function (g, x, y, t, anchor) {

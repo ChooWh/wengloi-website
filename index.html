@@ -140,8 +140,6 @@ nav.menu a.active{color:var(--red)}
 .hero-tint{position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,43,82,.55) 22%,rgba(13,43,82,.15) 48%,rgba(13,43,82,0))}
 .hero-tint::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 78%,rgba(8,18,36,.25))}
 .hero-tint::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0 1px,transparent 1px 3px)}
-.hud{position:absolute;right:38px;bottom:90px;z-index:2;background:rgba(13,43,82,.35);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(10px);color:#dbe2ec;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:10px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
-.hud .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.2s ease infinite}
 @keyframes blink{50%{opacity:.15}}
 .hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(159,178,204,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(159,178,204,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%)}
 .hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:130px}
@@ -331,7 +329,6 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   nav.menu.open .lang{color:var(--navy) !important}
   nav.menu.open .lang a[aria-current="true"]{color:#fff !important}
   .burger{display:block}
-  .hud{display:none}
 }
 @media (max-width:520px){
   .grid3,.trust .wrap,.gallery,.team{grid-template-columns:1fr}
@@ -380,7 +377,6 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   <video class="hero-video" src="assets/video/hero-bg.mp4" poster="assets/video/hero-bg-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="hero-tint"></div>
   <div class="hero-grid"></div>
-  <div class="hud"><span class="dot"></span><span data-i18n="hud">Live feed — CNC turning •</span> <span id="rpm">2,450</span> rpm</div>
   <div class="wrap">
     <h1 data-i18n="hero.h1" id="heroTitle">Machine down? We'll get it <span class="accent">running.</span></h1>
     <p data-i18n="hero.sub" class="sub">Since 1989, plants and contractors across Malaysia have trusted Weng Loi Machinery to repair, recondition and remake machinery parts — fast. CNC &amp; manual machining, one-stop, by engineers.</p>
@@ -692,9 +688,6 @@ document.addEventListener('keydown', function(e){
 /* Close mobile menu on link click */
 document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click', function(){ document.querySelector('.menu').classList.remove('open'); }); });
 
-/* HUD rpm ticker */
-var rpm = document.getElementById('rpm');
-if(rpm && !reduced){ setInterval(function(){ rpm.textContent = (2440 + Math.floor(Math.random() * 30)).toLocaleString(); }, 900); }
 
 /* ---------- Language: English at /, 中文 at /zh/ (separate pages so search engines index both) ---------- */
 mt.innerHTML += mt.innerHTML;
