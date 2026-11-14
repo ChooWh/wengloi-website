@@ -137,8 +137,6 @@ nav.menu a.active{color:var(--red)}
 .hud .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.2s ease infinite}
 @keyframes blink{50%{opacity:.15}}
 .hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(159,178,204,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(159,178,204,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 70% 50%,#000 30%,transparent 75%)}
-#hero3d{position:absolute;right:0;top:0;width:52%;height:100%;z-index:1;pointer-events:none}
-.hero.has3d .gear,.hero.has3d .gear2{display:none}
 .hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:130px}
 .hero h1{font-size:clamp(36px,6.5vw,72px);font-weight:900;line-height:1.08;max-width:820px;letter-spacing:-1px;text-shadow:0 2px 22px rgba(8,18,36,.85)}
 .hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotate(3deg);animation:wordup .7s cubic-bezier(.2,.7,.3,1) forwards}
@@ -151,10 +149,6 @@ nav.menu a.active{color:var(--red)}
 .hero .tagline{margin-top:52px;font-size:12px;letter-spacing:4px;font-weight:700;color:#9fb2cc;text-transform:uppercase;opacity:0;animation:fadeup .8s ease 1.5s forwards}
 .hero .tagline b{color:var(--red)}
 @keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.gear{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:420px;height:420px;opacity:.10;z-index:1;animation:spin 40s linear infinite}
-.gear2{position:absolute;right:220px;bottom:-70px;width:200px;height:200px;opacity:.08;z-index:1;animation:spinrev 28s linear infinite}
-@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
-@keyframes spinrev{to{transform:rotate(-360deg)}}
 .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#9fb2cc;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-align:center;text-decoration:none}
 .scroll-hint span{display:block;font-size:22px;animation:bob 1.6s ease infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
@@ -273,7 +267,6 @@ nav.menu a.active{color:var(--red)}
 .info h4{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#9fb2cc;margin-bottom:6px}
 .info p, .info a{font-size:14px;color:#fff;text-decoration:none}
 .info a:hover{color:var(--wa)}
-.contact .gear3{position:absolute;left:-110px;top:-110px;width:320px;height:320px;opacity:.06;animation:spin 50s linear infinite}
 
 /* ---------- Footer ---------- */
 footer{background:#081c38;color:#9fb2cc;padding:28px 0;font-size:13px}
@@ -326,7 +319,6 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   nav.menu.open .lang{color:var(--navy) !important}
   nav.menu.open .lang button[aria-pressed="true"]{color:#fff}
   .burger{display:block}
-  .gear,.gear2{display:none}
   .hud{display:none}
 }
 @media (max-width:520px){
@@ -342,6 +334,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   .reveal,.reveal-left,.reveal-right,.hero h1 .w,.hero p.sub,.hero .btns,.hero .tagline{opacity:1 !important;transform:none !important}
 }
 </style>
+<link rel="stylesheet" href="assets/css/futuristic.css">
 </head>
 <body>
 
@@ -375,10 +368,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
   <video class="hero-video" src="assets/video/hero-bg.mp4" poster="assets/video/hero-bg-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="hero-tint"></div>
   <div class="hero-grid"></div>
-  <canvas id="hero3d"></canvas>
   <div class="hud"><span class="dot"></span><span data-i18n="hud">Live feed — CNC turning •</span> <span id="rpm">2,450</span> rpm</div>
-  <svg class="gear" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
-  <svg class="gear2" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
   <div class="wrap">
     <h1 data-i18n="hero.h1" id="heroTitle">Machine down? We'll get it <span class="accent">running.</span></h1>
     <p data-i18n="hero.sub" class="sub">Since 1989, plants and contractors across Malaysia have trusted Weng Loi Machinery to repair, recondition and remake machinery parts — fast. CNC &amp; manual machining, one-stop, by engineers.</p>
@@ -520,7 +510,6 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
 </section>
 
 <section class="contact" id="contact">
-  <svg class="gear3" viewBox="0 0 100 100" fill="#fff"><path d="M50 0l6 12a38 38 0 018 3l13-4 8 8-4 13a38 38 0 013 8l12 6v12l-12 6a38 38 0 01-3 8l4 13-8 8-13-4a38 38 0 01-8 3l-6 12h-12l-6-12a38 38 0 01-8-3l-13 4-8-8 4-13a38 38 0 01-3-8L0 56V44l12-6a38 38 0 013-8L11 17l8-8 13 4a38 38 0 018-3l6-12z M50 32a18 18 0 100 36 18 18 0 000-36z" transform="translate(6 6) scale(.88)"/></svg>
   <div class="wrap">
     <div data-i18n="ct.kicker" class="kicker reveal" style="justify-content:center">Get a quote</div>
     <h2 data-i18n="ct.h2" class="reveal">Send us your part today</h2>
@@ -750,97 +739,8 @@ setLang(startLang, false);
 })();
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-<script>
-window.addEventListener('load', function(){
-'use strict';
-var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var canvas = document.getElementById('hero3d');
-if (reduced || !window.THREE || !canvas || window.innerWidth < 900) return;
-
-try {
-  var renderer = new THREE.WebGLRenderer({canvas: canvas, alpha: true, antialias: true});
-} catch(err){ return; }
-document.querySelector('.hero').classList.add('has3d');
-
-var scene = new THREE.Scene();
-var W = canvas.clientWidth, H = canvas.clientHeight;
-var camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
-camera.position.set(0, 0, 7.5);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setSize(W, H, false);
-
-/* Procedural gear shape */
-function gearShape(teeth, rOut, rIn, rHole){
-  var s = new THREE.Shape(), step = Math.PI * 2 / teeth;
-  s.moveTo(Math.cos(0) * rOut, Math.sin(0) * rOut);
-  for (var i = 0; i < teeth; i++){
-    var a0 = i * step;
-    s.lineTo(Math.cos(a0 + step * .32) * rOut, Math.sin(a0 + step * .32) * rOut);
-    s.lineTo(Math.cos(a0 + step * .45) * rIn,  Math.sin(a0 + step * .45) * rIn);
-    s.lineTo(Math.cos(a0 + step * .87) * rIn,  Math.sin(a0 + step * .87) * rIn);
-    s.lineTo(Math.cos(a0 + step) * rOut,       Math.sin(a0 + step) * rOut);
-  }
-  var hole = new THREE.Path();
-  hole.absarc(0, 0, rHole, 0, Math.PI * 2, true);
-  s.holes.push(hole);
-  return s;
-}
-function wireGear(teeth, rOut, rIn, rHole, depth, color, opacity){
-  var geo = new THREE.ExtrudeGeometry(gearShape(teeth, rOut, rIn, rHole), {depth: depth, bevelEnabled: false, curveSegments: 24});
-  geo.center();
-  var edges = new THREE.EdgesGeometry(geo, 18);
-  return new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color: color, transparent: true, opacity: opacity}));
-}
-
-var group = new THREE.Group();
-var g1 = wireGear(14, 2.1, 1.7, 0.75, 0.5, 0x9fb2cc, 0.55);
-var g2 = wireGear(10, 1.05, 0.82, 0.35, 0.4, 0xE30613, 0.75);
-g2.position.set(2.55, 1.6, 0.2);
-group.add(g1); group.add(g2);
-group.rotation.x = 0.45;
-scene.add(group);
-
-/* Particle field */
-var N = 260, pos = new Float32Array(N * 3);
-for (var i = 0; i < N * 3; i += 3){
-  pos[i]     = (Math.random() - .5) * 12;
-  pos[i + 1] = (Math.random() - .5) * 8;
-  pos[i + 2] = (Math.random() - .5) * 6;
-}
-var pgeo = new THREE.BufferGeometry();
-pgeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-var points = new THREE.Points(pgeo, new THREE.PointsMaterial({color: 0x9fb2cc, size: 0.035, transparent: true, opacity: 0.5}));
-scene.add(points);
-
-/* Mouse parallax */
-var tx = 0, ty = 0;
-document.querySelector('.hero').addEventListener('mousemove', function(e){
-  tx = (e.clientX / window.innerWidth - .5) * 0.5;
-  ty = (e.clientY / window.innerHeight - .5) * 0.35;
-});
-
-var visible = true;
-new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }, {threshold: 0}).observe(canvas);
-
-function resize(){
-  var w = canvas.clientWidth, h = canvas.clientHeight;
-  if (w !== W || h !== H){ W = w; H = h; camera.aspect = W / H; camera.updateProjectionMatrix(); renderer.setSize(W, H, false); }
-}
-window.addEventListener('resize', resize);
-
-(function animate(){
-  requestAnimationFrame(animate);
-  if (!visible) return;
-  g1.rotation.z += 0.0028;
-  g2.rotation.z -= 0.0040;
-  points.rotation.y += 0.0004;
-  group.rotation.y += (tx - group.rotation.y) * 0.04;
-  group.rotation.x += (0.45 + ty - group.rotation.x) * 0.04;
-  renderer.render(scene, camera);
-})();
-});
-</script>
+<script src="assets/js/anime.umd.min.js" defer></script>
+<script src="assets/js/futuristic.js" defer></script>
 
 </body>
 </html>

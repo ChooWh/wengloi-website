@@ -1,0 +1,137 @@
+/* Futuristic layer for the home page. Loaded after the inline styles, so it overrides them.
+   All motion is driven by assets/js/futuristic.js (anime.js). Everything here is cosmetic:
+   page content stays in the HTML. */
+:root{
+  --cyan:#22d3ee;
+  --sky:#38bdf8;
+  --ink:#06142a;
+  --glass:rgba(255,255,255,.05);
+  --edge:rgba(34,211,238,.22);
+}
+
+/* ---------- Progress bar, header ---------- */
+#progress{background:linear-gradient(90deg,var(--cyan),var(--sky) 60%,var(--red));box-shadow:0 0 12px rgba(34,211,238,.7)}
+header.solid{background:rgba(6,20,42,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:0 1px 0 var(--edge),0 10px 30px rgba(0,0,0,.25)}
+header.solid nav.menu a:not(.nav-cta),
+header.solid .logo-text .cn,header.solid .logo-text .en,
+header.solid .burger,header.solid .lang{color:#fff}
+nav.menu a:not(.nav-cta)::after{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+nav.menu a.active{color:var(--cyan)}
+header.solid nav.menu a.active{color:var(--cyan)}
+.nav-cta{box-shadow:0 0 18px rgba(37,211,102,.35)}
+
+/* ---------- Buttons ---------- */
+.btn-red{background:linear-gradient(135deg,#ff2d3b,var(--red) 60%,#b30410);box-shadow:0 0 0 0 rgba(227,6,19,.5);animation:fxhalo 2.8s ease-out infinite}
+.btn-outline{border:1.5px solid rgba(34,211,238,.7);background:rgba(34,211,238,.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn-outline:hover{background:rgba(34,211,238,.18);box-shadow:0 0 26px rgba(34,211,238,.45)}
+@keyframes fxhalo{0%{box-shadow:0 0 0 0 rgba(227,6,19,.5)}70%,100%{box-shadow:0 0 0 16px rgba(227,6,19,0)}}
+
+/* ---------- Hero ---------- */
+.hero-tint{background:linear-gradient(105deg,rgba(6,20,42,.82) 18%,rgba(8,36,74,.35) 52%,rgba(6,20,42,.05)),radial-gradient(ellipse at 80% 20%,rgba(34,211,238,.14),transparent 55%)}
+.hero-grid{background-image:linear-gradient(rgba(34,211,238,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.09) 1px,transparent 1px);animation:fxgrid 6s ease-in-out infinite alternate}
+@keyframes fxgrid{from{opacity:.55}to{opacity:1}}
+.hero h1 .accent{color:transparent;background:linear-gradient(90deg,#a5f3fc,var(--cyan) 45%,var(--sky));-webkit-background-clip:text;background-clip:text;text-shadow:none;filter:drop-shadow(0 0 16px rgba(34,211,238,.55))}
+.hero h1 .accent::after{background:rgba(34,211,238,.35)}
+.hero .tagline{color:#7dd3fc}
+.hero .tagline b{color:var(--cyan)}
+.hud{border-color:var(--edge);background:rgba(6,20,42,.55);box-shadow:0 0 22px rgba(34,211,238,.18) inset,0 0 18px rgba(34,211,238,.12)}
+.hud .dot{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.scroll-hint{color:#7dd3fc}
+
+.fx-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fx-particles{z-index:1}
+.fx-dot{position:absolute;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px 1px rgba(34,211,238,.8);opacity:.5;will-change:transform,opacity}
+.fx-scanline{position:absolute;left:0;right:0;top:0;height:2px;z-index:1;background:linear-gradient(90deg,transparent,rgba(34,211,238,.8),transparent);box-shadow:0 0 18px 3px rgba(34,211,238,.35);opacity:.35;will-change:transform}
+.fx-glow{position:absolute;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;z-index:1;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.18),transparent 62%);opacity:0;pointer-events:none;will-change:transform}
+.hud-art{position:absolute;right:3%;bottom:150px;width:min(34vw,480px,calc((100vh - 360px)*1.3));z-index:1;pointer-events:none;overflow:visible}
+.hud-art .d{fill:none;stroke:var(--cyan);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.hud-art .dim{stroke:#7dd3fc;stroke-width:1;opacity:.85}
+.hud-art .thin{stroke-width:1;opacity:.5}
+.hud-art .dash{stroke-dasharray:10 6}
+.hud-art .shaft{filter:drop-shadow(0 0 5px rgba(34,211,238,.6))}
+.hud-art text{fill:#a5f3fc;font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:1.5px;opacity:0}
+.hud-art .red{stroke:var(--red);fill:var(--red)}
+.hud-art .hud-scan{stroke:#fff;stroke-width:1.5;opacity:.8;filter:drop-shadow(0 0 6px var(--cyan))}
+.hud-art .hud-pulse{fill:none;stroke:var(--cyan);stroke-width:1.5;transform-box:fill-box;transform-origin:center}
+.hud-art .node{fill:var(--cyan);filter:drop-shadow(0 0 6px var(--cyan))}
+@media (max-width:899px){.hud-art,.fx-glow{display:none}}
+
+/* ---------- Marquee ---------- */
+.marquee{background:linear-gradient(90deg,#06142a,#0b2c58 50%,#06142a);color:var(--cyan);border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);text-shadow:0 0 12px rgba(34,211,238,.45)}
+.marquee i{color:var(--red);opacity:1;text-shadow:0 0 10px rgba(227,6,19,.8)}
+
+/* ---------- Trust ---------- */
+.trust{background:linear-gradient(180deg,#07162c,#0a2347)}
+.trust .wrap>div{background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(255,255,255,.03));border:1px solid var(--edge);box-shadow:0 0 24px rgba(34,211,238,.06) inset}
+.trust .num{text-shadow:0 0 18px rgba(34,211,238,.5);font-variant-numeric:tabular-nums}
+.trust .num em{color:var(--cyan)}
+
+/* ---------- Dark sections: kickers, services ---------- */
+.trust .kicker,.services .kicker,.work .kicker,.contact .kicker{color:var(--cyan)}
+.services .kicker::before,.work .kicker::before,.contact .kicker::before{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.kicker::before{width:var(--kw,34px)}
+.services{background:radial-gradient(ellipse at 15% 0%,#0f3a6e 0%,transparent 55%),#06142a;color:#fff}
+.services::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(34,211,238,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.06) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%)}
+.services .wrap{position:relative}
+.services h2{color:#fff}
+.services .lead{color:#9fb2cc}
+.card{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--edge);border-top:2px solid var(--cyan);color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.25);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.card>*{position:relative;z-index:1}
+.card:hover{border-top-color:var(--cyan);box-shadow:0 0 34px rgba(34,211,238,.28),0 18px 40px rgba(0,0,0,.35)}
+.card h3{color:#fff}
+.card p{color:#a9bad2}
+.card .ico{filter:drop-shadow(0 0 10px rgba(34,211,238,.55))}
+.card .more{color:var(--cyan)}
+.card::before,.step::before,.member::before,.capstat::before,.info div::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(34,211,238,.20),transparent 65%)}
+.card:hover::before,.step:hover::before,.member:hover::before,.capstat:hover::before,.info div:hover::before{opacity:1}
+.member,.capstat,.info div{position:relative;overflow:hidden}
+.step{position:relative}
+.step::before{border-radius:inherit}
+
+/* ---------- Steps, capabilities, about (light sections) ---------- */
+.step{background:linear-gradient(160deg,#fff,#eaf1f9);border:1px solid #dbe6f3;border-left:3px solid var(--cyan)}
+.step>*{position:relative;z-index:1}
+.step .n{background:linear-gradient(135deg,var(--sky),#0D2B52);animation:fxpulse 2.6s ease-out infinite}
+@keyframes fxpulse{0%{box-shadow:0 0 0 0 rgba(34,211,238,.55)}70%,100%{box-shadow:0 0 0 16px rgba(34,211,238,0)}}
+.steps .grid3{position:relative}
+.fx-stepline{position:absolute;top:1px;height:2px;z-index:0;background:linear-gradient(90deg,var(--cyan),var(--sky) 60%,var(--red));box-shadow:0 0 10px rgba(34,211,238,.7);transform-origin:left center;transform:scaleX(0);pointer-events:none}
+.caps th{background:linear-gradient(90deg,#0D2B52,#14487f)}
+.caps tbody tr:hover{background:#e8f6fb;box-shadow:inset 3px 0 0 var(--cyan)}
+.capstat{border-left-color:var(--cyan);background:linear-gradient(160deg,#fff,#e8f1fa)}
+.capstat>*{position:relative;z-index:1}
+.capstat .v{color:#0D2B52}
+.about .badge{background:linear-gradient(135deg,#ff2d3b,var(--red));box-shadow:0 0 22px rgba(227,6,19,.45)}
+.member>*{position:relative;z-index:1}
+.member:hover{box-shadow:0 0 30px rgba(34,211,238,.28),0 18px 36px rgba(13,43,82,.15)}
+.member:hover img{border-color:var(--cyan)}
+.member .role{color:#0b7ea6}
+
+/* ---------- Work gallery ---------- */
+.work{background:linear-gradient(180deg,#0a2347,#06142a)}
+.work::before{background-image:linear-gradient(rgba(34,211,238,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.06) 1px,transparent 1px)}
+.gallery figure{border:1px solid var(--edge);transition:box-shadow .3s,border-color .3s}
+.gallery figure:hover{border-color:var(--cyan);box-shadow:0 0 26px rgba(34,211,238,.35)}
+.gallery figure.vid{outline-color:var(--cyan)}
+.gallery figure.vid::after{background:var(--cyan);color:#06142a}
+
+/* ---------- Contact ---------- */
+.contact{background:radial-gradient(ellipse at 80% 0%,#14487f 0%,transparent 55%),linear-gradient(135deg,#06142a,#0D2B52)}
+.contact::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(34,211,238,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.06) 1px,transparent 1px);background-size:56px 56px}
+.contact .wrap{position:relative;z-index:1}
+.info div{border-color:var(--edge);background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(255,255,255,.03))}
+.info div>*{position:relative;z-index:1}
+.info h4{color:var(--cyan)}
+.fx-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(40px);opacity:.35;will-change:transform}
+
+/* ---------- Footer ---------- */
+footer{background:#04101f;border-top:1px solid var(--edge)}
+
+/* ---------- Hidden until anime.js reveals them (JS adds this class, so no-JS shows everything) ---------- */
+.fx-pre{opacity:0}
+
+@media (prefers-reduced-motion:reduce){
+  .btn-red,.hero-grid,.step .n{animation:none !important}
+  .fx-pre{opacity:1 !important}
+  .fx-dot,.fx-scanline,.fx-glow,.fx-orb{display:none}
+  .hud-art text{opacity:.9}
+}
