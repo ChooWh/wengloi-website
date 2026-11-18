@@ -89,7 +89,6 @@
   "alt.cncc": "机师操作运行中的数控加工中心",
   "alt.gearc": "车床上加工中的大型齿圈与轴",
   "alt.scan": "Creality Scan Raptor 手持式3D扫描仪正在扫描机械零件",
-  "cap.scan": "Creality Scan Raptor 手持式3D扫描仪（厂商图片）",
   "scan.h": "3D扫描逆向工程",
   "scan.p1": "没有图纸，零件又已磨损、损坏或停产？我们用 Creality Scan Raptor 手持式3D扫描仪扫描零件，获取其真实几何形状，再据此逆向还原出替换件。",
   "scan.p2": "扫描数据用于指导新零件的加工，复杂形状也能准确复制，无需苦等进口替换件。欢迎通过 WhatsApp 发送零件照片开始。",
