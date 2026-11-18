@@ -28,6 +28,7 @@ Weng Loi Machinery Engineering was founded by Choo Tuon Loi. Team of 19. English
 - CNC machining: one-off or batch parts
 - Manual machining: large, odd and urgent jobs: shafts up to 4 m long and ø300 mm; flanges and plates up to ø1,600 mm
 - Prototyping: from drawing, sample or sketch; reverse-engineering from a worn original
+- 3D scanning: handheld Creality Scan Raptor 3D scanner used to reverse-engineer worn, broken or obsolete machine parts
 - Modification: resizing, re-boring, keyways and threads
 - Welding and fabrication: build-up welding before re-machining, general fabrication
 

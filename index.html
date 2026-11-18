@@ -67,6 +67,7 @@ if(p==='zh')location.replace('zh/'+location.hash);}catch(e){}})();
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CNC machining", "description": "CNC turning and machining centre work, one-off or batch."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manual machining", "description": "Large manual turning: shafts up to 4 m long and 300 mm diameter, flanges and plates up to 1,600 mm diameter; milling, slotting and keyways."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prototyping and reverse engineering", "description": "Parts made from drawings, samples or worn originals."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D scanning for reverse engineering", "description": "Handheld 3D scanning (Creality Scan Raptor) of worn, broken or obsolete machine parts to reverse-engineer replacements."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Modification", "description": "Resizing, re-boring, keyways and threads on existing parts."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Welding and fabrication", "description": "Build-up welding before re-machining, and general fabrication."}}
     ]
@@ -304,6 +305,11 @@ nav.menu .lang a::after{display:none}
 .lang a[aria-current="true"]{background:var(--red);color:#fff !important}
 .card .more{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--red);text-decoration:none}
 .card .more:hover{text-decoration:underline}
+.scan{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:40px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 4px 14px rgba(13,43,82,.06);border-top:4px solid var(--navy)}
+.scan figure{margin:0}.scan img{width:100%;height:auto;border-radius:10px;display:block}
+.scan figcaption{font-size:12px;color:var(--steel);margin-top:8px}
+.scan h3{color:var(--navy);font-size:20px;font-weight:700;margin-bottom:10px}.scan p{font-size:15px;color:var(--steel);margin-bottom:10px}
+@media (max-width:900px){.scan{grid-template-columns:1fr;gap:18px}}
 .svc-links a{margin-right:14px;text-decoration:none}
 .svc-links a:hover{color:#fff}
 /* Chinese typography */
@@ -414,9 +420,17 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
       <div class="card reveal tilt"><div class="ico">🔧</div><h3 data-i18n="svc.1.h">Repair &amp; Reconditioning</h3><p data-i18n="svc.1.p">Worn shafts, gears, rollers and rotors restored to spec — so you don't wait months for an overseas replacement.</p><a class="more" data-i18n="svc.more" href="services/breakdown-repair/">Learn more →</a></div>
       <div class="card reveal tilt" style="--d:.1s"><div class="ico">⚙️</div><h3 data-i18n="svc.2.h">CNC Machining</h3><p data-i18n="svc.2.p">CNC lathes and a high-speed machining centre for accurate, repeatable parts — one-off or batch production.</p><a class="more" data-i18n="svc.more" href="services/cnc-machining/">Learn more →</a></div>
       <div class="card reveal tilt" style="--d:.2s"><div class="ico">🛠️</div><h3 data-i18n="svc.3.h">Manual Machining</h3><p data-i18n="svc.3.p">Over 20 manual lathes and mills handle the big, odd and urgent jobs CNC shops turn away — long-bed lathes turn shafts up to 4&nbsp;m long and ø300&nbsp;mm, and a face lathe takes flanges and plates up to ø1,600&nbsp;mm.</p><a class="more" data-i18n="svc.more" href="services/large-turning/">Learn more →</a></div>
-      <div class="card reveal tilt"><div class="ico">📐</div><h3 data-i18n="svc.4.h">Prototyping</h3><p data-i18n="svc.4.p">Turn your drawing, sample or sketch into a working part. No drawing? We can measure and reverse-engineer from the worn original.</p></div>
+      <div class="card reveal tilt"><div class="ico">📐</div><h3 data-i18n="svc.4.h">Prototyping</h3><p data-i18n="svc.4.p">Turn your drawing, sample or sketch into a working part. No drawing? We can measure or 3D-scan the worn original and reverse-engineer it.</p></div>
       <div class="card reveal tilt" style="--d:.1s"><div class="ico">🔩</div><h3 data-i18n="svc.5.h">Modification</h3><p data-i18n="svc.5.p">Adapt existing parts and machines to new requirements — resizing, re-boring, keyways and threads.</p></div>
       <div class="card reveal tilt" style="--d:.2s"><div class="ico">⚡</div><h3 data-i18n="svc.6.h">Welding &amp; Fabrication</h3><p data-i18n="svc.6.p">Build-up welding on worn surfaces before re-machining, plus general fabrication to complete the job in one place.</p></div>
+    </div>
+    <div class="scan reveal">
+      <figure><img src="assets/img/service-3d-scanner.jpg" alt="Creality Scan Raptor handheld 3D scanner capturing a machine part" data-i18n-alt="alt.scan" loading="lazy" width="1007" height="689"></figure>
+      <div>
+        <h3 data-i18n="scan.h">3D scanning for reverse engineering</h3>
+        <p data-i18n="scan.p1">No drawing, and the part is worn, broken or obsolete? We scan it with our Creality Scan Raptor handheld 3D scanner, capture its real geometry, and use the scan to reverse-engineer a replacement.</p>
+        <p data-i18n="scan.p2">The scan data guides the machining of the new part, so complex shapes can be copied accurately without waiting for an overseas replacement. WhatsApp us a photo of the part to start.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -501,7 +515,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
       <div class="reveal-left">
         <p data-i18n="about.p1">When a machine stops, everything stops. That's the problem Weng Loi Machinery has solved for plants, mills and contractors since 1989 — hundreds of clients served by consulting, designing and manufacturing optimised engineering parts, delivered by engineers.</p>
         <p data-i18n="about.p2">Founded by Choo Tuon Loi, a machinist with over 50 years at the lathe, the company today runs a 19-person team that combines old-school machining craft with degree-qualified mechanical engineers and modern CNC capability.</p>
-        <p data-i18n="about.p3">We work across the full range of materials — steels, non-ferrous metals, plastics and composites — and we're investing ahead: 3D scanning, SLA/SLS 3D printing and multi-axis machining are on our roadmap.</p>
+        <p data-i18n="about.p3">We work across the full range of materials — steels, non-ferrous metals, plastics and composites — and we're investing ahead: SLA/SLS 3D printing and multi-axis machining are on our roadmap.</p>
       </div>
       <div class="imgwrap reveal-right">
         <img src="assets/img/hero-machinist.jpg" alt="Founder machining a component at the lathe" data-i18n-alt="alt.founder" loading="lazy">
