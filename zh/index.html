@@ -63,6 +63,7 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CNC machining", "description": "CNC turning and machining centre work, one-off or batch."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manual machining", "description": "Large manual turning: shafts up to 4 m long and 300 mm diameter, flanges and plates up to 1,600 mm diameter; milling, slotting and keyways."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prototyping and reverse engineering", "description": "Parts made from drawings, samples or worn originals."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3D scanning for reverse engineering", "description": "Handheld 3D scanning (Creality Scan Raptor) of worn, broken or obsolete machine parts to reverse-engineer replacements."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Modification", "description": "Resizing, re-boring, keyways and threads on existing parts."}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Welding and fabrication", "description": "Build-up welding before re-machining, and general fabrication."}}
     ]
@@ -300,6 +301,11 @@ nav.menu .lang a::after{display:none}
 .lang a[aria-current="true"]{background:var(--red);color:#fff !important}
 .card .more{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--red);text-decoration:none}
 .card .more:hover{text-decoration:underline}
+.scan{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-top:40px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 4px 14px rgba(13,43,82,.06);border-top:4px solid var(--navy)}
+.scan figure{margin:0}.scan img{width:100%;height:auto;border-radius:10px;display:block}
+.scan figcaption{font-size:12px;color:var(--steel);margin-top:8px}
+.scan h3{color:var(--navy);font-size:20px;font-weight:700;margin-bottom:10px}.scan p{font-size:15px;color:var(--steel);margin-bottom:10px}
+@media (max-width:900px){.scan{grid-template-columns:1fr;gap:18px}}
 .svc-links a{margin-right:14px;text-decoration:none}
 .svc-links a:hover{color:#fff}
 /* Chinese typography */
@@ -410,9 +416,17 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
       <div class="card reveal tilt"><div class="ico">🔧</div><h3 data-i18n="svc.1.h">维修与翻新</h3><p data-i18n="svc.1.p">磨损的轴、齿轮、滚筒和转子均可修复至规格要求，无需苦等数月进口替换件。</p><a class="more" data-i18n="svc.more" href="services/breakdown-repair/">了解更多 →</a></div>
       <div class="card reveal tilt" style="--d:.1s"><div class="ico">⚙️</div><h3 data-i18n="svc.2.h">数控加工</h3><p data-i18n="svc.2.p">配备数控车床及高速加工中心，可精确、稳定地加工零件，单件或批量生产皆可。</p><a class="more" data-i18n="svc.more" href="services/cnc-machining/">了解更多 →</a></div>
       <div class="card reveal tilt" style="--d:.2s"><div class="ico">🛠️</div><h3 data-i18n="svc.3.h">手动加工</h3><p data-i18n="svc.3.p">20多台手动车床和铣床，承接数控厂拒接的大型、异形和紧急工件——长床身车床可车削长达 4&nbsp;米、直径最大 ø300&nbsp;mm 的轴；端面车床可加工直径最大 ø1,600&nbsp;mm 的法兰与板件。</p><a class="more" data-i18n="svc.more" href="services/large-turning/">了解更多 →</a></div>
-      <div class="card reveal tilt"><div class="ico">📐</div><h3 data-i18n="svc.4.h">样件制作</h3><p data-i18n="svc.4.p">将您的图纸、样品或草图变成可用的零件。没有图纸？我们可从磨损的原件测量并逆向还原。</p></div>
+      <div class="card reveal tilt"><div class="ico">📐</div><h3 data-i18n="svc.4.h">样件制作</h3><p data-i18n="svc.4.p">将您的图纸、样品或草图变成可用的零件。没有图纸？我们可对磨损的原件进行测量或3D扫描，并逆向还原。</p></div>
       <div class="card reveal tilt" style="--d:.1s"><div class="ico">🔩</div><h3 data-i18n="svc.5.h">改造加工</h3><p data-i18n="svc.5.p">根据新要求改造现有零件与机器——调整尺寸、重新镗孔、键槽及螺纹加工。</p></div>
       <div class="card reveal tilt" style="--d:.2s"><div class="ico">⚡</div><h3 data-i18n="svc.6.h">焊接与制造</h3><p data-i18n="svc.6.p">磨损表面先堆焊再重新加工，另提供一般制造加工，让整项工作在同一处完成。</p></div>
+    </div>
+    <div class="scan reveal">
+      <figure><img src="../assets/img/service-3d-scanner.jpg" alt="Creality Scan Raptor 手持式3D扫描仪正在扫描机械零件" data-i18n-alt="alt.scan" loading="lazy" width="1007" height="689"><figcaption data-i18n="cap.scan">Creality Scan Raptor 手持式3D扫描仪（厂商图片）</figcaption></figure>
+      <div>
+        <h3 data-i18n="scan.h">3D扫描逆向工程</h3>
+        <p data-i18n="scan.p1">没有图纸，零件又已磨损、损坏或停产？我们用 Creality Scan Raptor 手持式3D扫描仪扫描零件，获取其真实几何形状，再据此逆向还原出替换件。</p>
+        <p data-i18n="scan.p2">扫描数据用于指导新零件的加工，复杂形状也能准确复制，无需苦等进口替换件。欢迎通过 WhatsApp 发送零件照片开始。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -497,7 +511,7 @@ html[lang^="zh"] .hero h1 .accent{white-space:normal}
       <div class="reveal-left">
         <p data-i18n="about.p1">机器一停，一切都停。自1989年起，永來机械一直为工厂、加工厂和承包商解决这个难题——数百家客户通过我们的咨询、设计与制造获得优化的工程零件，全程由工程师负责。</p>
         <p data-i18n="about.p2">公司由拥有50多年车床经验的机师 Choo Tuon Loi 创办，如今拥有19人团队，将传统机械加工工艺、具学位资格的机械工程师与现代数控能力结合在一起。</p>
-        <p data-i18n="about.p3">我们可加工各类材料——钢材、有色金属、塑料及复合材料——并持续投资未来：3D扫描、SLA/SLS 3D打印及多轴加工均在我们的发展规划之中。</p>
+        <p data-i18n="about.p3">我们可加工各类材料——钢材、有色金属、塑料及复合材料——并持续投资未来：SLA/SLS 3D打印及多轴加工均在我们的发展规划之中。</p>
       </div>
       <div class="imgwrap reveal-right">
         <img src="../assets/img/hero-machinist.jpg" alt="创办人在车床上加工零件" data-i18n-alt="alt.founder" loading="lazy">
